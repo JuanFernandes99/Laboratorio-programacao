@@ -6,16 +6,28 @@ import java.util.Date;
 public class Main {
 
 	public static void main(String[] args) {
-
-		ContaBancaria conta1 = new ContaBancaria("Juan", new Date());
-		ContaBancaria conta2 = new ContaBancaria("pedro", 250);
+		Banco banco1 = new Banco("Santander");
+		
+		//ContaBancaria conta1 = new ContaBancaria("Juan", new Date());  
+		//ContaBancaria conta2 = new ContaBancaria("pedro", 250);  // para perceber melhor fazer da maneira seguinte
+		
+		banco1.criaConta(new ContaBancaria("Juan", new Date()));
+		banco1.criaConta(new ContaBancaria("pedro", 250));
+		
+		ContaBancaria conta1 = banco1.getConta("juan"); // nao é possivel chamar a funçao getConta se nao fizermos esta linha de codigo
+		System.out.println(conta1.getSaldo());
+		
+		ContaBancaria conta2 = banco1.getConta("pedro"); 
+		System.out.println(conta2.getSaldo());
 		
 		conta1.depositar(500);
 		conta1.levantar(200);
 		conta2.depositar(900);
 		conta2.levantar(400);
+		
 		System.out.println(conta1.getInformacaoConta());
 		System.out.println(conta2.getInformacaoConta());
+
 	}
 
 }

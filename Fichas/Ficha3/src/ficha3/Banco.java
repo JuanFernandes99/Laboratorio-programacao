@@ -13,6 +13,22 @@ public class Banco {
 
 	}
 
+	public void criaConta(ContaBancaria aContaBancaria) {
+
+		contasBancarias.add(aContaBancaria);
+
+	}
+
+	public ContaBancaria getConta(String aNome) {
+		for (ContaBancaria contaBancaria : contasBancarias) {
+			if (contaBancaria.getTitular().toLowerCase().equals(aNome.toLowerCase())) { // para comparar strings é utilizado sempre o equals
+				return contaBancaria;
+			}
+			
+		}
+		return null;
+	}
+
 	public String getNome() {
 		return nome;
 	}
