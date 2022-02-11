@@ -13,4 +13,20 @@ public class Banco {
 
 	}
 
+	public String getNome() {
+		return nome;
+	}
+
+	public List<ContaBancaria> getContasBancarias() {
+		return contasBancarias;
+	}
+
+	public void setNome(String aNome) {
+		nome = aNome;
+	}
+
+	public void setContasBancarias(List<ContaBancaria> aContasBancarias) {
+		contasBancarias = aContasBancarias;
+	}
+
 }
