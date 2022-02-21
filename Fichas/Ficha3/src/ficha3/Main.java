@@ -28,6 +28,16 @@ public class Main {
 		System.out.println(conta1.getInformacaoConta());
 		System.out.println(conta2.getInformacaoConta());
 
+		Casa casa1 = new Casa("Caminho da Chamorra");
+		Casa casa2 = new Casa("Caminho do Trapiche");
+		Casa casa3 = new Casa("Rua dos Alecrins");
+		banco1.criaCasa(casa1);
+		banco1.criaCasa(casa2);
+		banco1.criaCasa(casa3);
+		System.out.println(banco1.getCasas());
+		banco1.removeCasa("Caminho da Chamorra");
+		System.out.println(banco1.getCasas());
+
+		}
 	}
 
-}
