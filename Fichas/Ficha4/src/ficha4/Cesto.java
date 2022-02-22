@@ -26,6 +26,7 @@ public class Cesto {
 
 	@Override
 	public String toString() { // ver isto
+		// for e criar uma string no final // obg
 		return "Cesto{" + "frutas=" + frutas + '}';
 	}
 
