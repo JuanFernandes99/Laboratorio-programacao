@@ -3,7 +3,7 @@
 Resumo ficha 3
 
 **Ex. 1:Crie a classe ContaBancária com os seguintes atributos e métodos:**
-
+<pre>
    1º Criar uma Classe ContaBancária que tem como atributos privados: String Titular, double Saldo e Date DataAbertura(data atual);
    2º Construtor que tem o Titular como um atributo obrigatório; Apresenta da data do dia atua e inicia o saldo a 0(zero);
    3º Criar um método getInformaçãoConta() que retorna da seguinte forma (Titular: José Fonseca, Saldo: €321.50, Data Abertura: 22/2/2022;
@@ -48,5 +48,5 @@ Resumo ficha 3
    1º Criar o diagrama de classes UML;
    2º Adicionar uma descrição do projeto no ficheiro README;
    3º Adicionar o diagrama de classes UML ao ficheiro README;
-
+</pre>
 ![DiagramadeClasses_Juan](https://user-images.githubusercontent.com/97111394/155163310-0a96e7a7-d3a0-4854-92e0-e5be500265d5.png)
