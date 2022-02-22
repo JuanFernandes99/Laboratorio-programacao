@@ -57,18 +57,16 @@ public class Banco {
 			}
 		}
 	}
-	//Retorna a margem de lucro previsto da venda de todas as casas.
+
+	// Retorna a margem de lucro previsto da venda de todas as casas.
 	public double getLucroPrevisto() {
 		double lucroPrev = 0;
-		for (Casa casa: casas) {
+		for (Casa casa : casas) {
 			lucroPrev += casa.getPercentMargemLucro();
 		}
 		return lucroPrev;
 	}
-	//Getters
-	public String getNome() {
-		return nome;
-	}
+	// Getters
 
 	public List<ContaBancaria> getContasBancarias() {
 		return contasBancarias;
@@ -77,17 +75,10 @@ public class Banco {
 	public List<Casa> getCasas() {
 		return casas;
 	}
-	//Setters
-	public void setNome(String aNome) {
-		nome = aNome;
-	}
+	// Setters
 
 	public void setContasBancarias(List<ContaBancaria> aContasBancarias) {
 		contasBancarias = aContasBancarias;
-	}
-
-	public void setCasas(List<Casa> aCasas) {
-		casas = aCasas;
 	}
 
 }
