@@ -7,29 +7,38 @@ public class Casa {
 	private double precoVenda;
 
 	// construtor
+
+	// Construtor sem argumentos.
 	public Casa() {
 
 	}
 
+	// Construtor que recebe por parâmetro a morada da casa e cria uma casa com essa
+	// morada.
 	public Casa(String aMorada) {
 		morada = aMorada;
 	}
 
-	public double getLucro() {
+	// Retorna a margem de lucro da casa (diferença entre o preço de venda e o preço
+	// de custo).
+	public double getMargemLucro() {
 
-		double lucroCasa = precoVenda - precoCusto; // meter aqui pq nao vai ser preciso em mais nenhum lugar;
-
+		double lucroCasa = precoVenda - precoCusto; // Criar variável lucroCasa cá porque não vai ser preciso em mais
+													// nenhum lugar;
 		return lucroCasa;
 	}
 
+	// Retorna a percentagem da margem de lucro (a razão entre o preço de venda e o
+	// preço de custo).
 	public double getPercentMargemLucro() {
 
-		double PercentMargemLucro = (100 * getLucro() / precoCusto);
+		double PercentMargemLucro = (getMargemLucro() / (precoVenda * 100));
 
 		return PercentMargemLucro;
 
 	}
 
+	// Getters
 	public String getMorada() {
 		return morada;
 	}
@@ -42,6 +51,7 @@ public class Casa {
 		return precoVenda;
 	}
 
+	// Setters
 	public void setMorada(String aMorada) {
 		morada = aMorada;
 	}

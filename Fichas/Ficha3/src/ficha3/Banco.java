@@ -8,39 +8,31 @@ public class Banco {
 	private List<ContaBancaria> contasBancarias;
 	private List<Casa> casas;
 
+	// Construtor
+
+	// Recebe por parâmetro o nome do banco
 	public Banco(String aNome) {
 		nome = aNome;
 		contasBancarias = new ArrayList<ContaBancaria>(100); // limitar a 100
-		casas = new ArrayList<Casa>(100);
+		casas = new ArrayList<Casa>();
 	}
 
+	// Métodos
+
+	// Recebe uma contaBancária por parâmetro e acrescenta ao array (lista).
 	public void criaConta(ContaBancaria aContaBancaria) {
 
 		contasBancarias.add(aContaBancaria);
 
 	}
 
-	public void criaCasa(Casa aCasa) {
-
-		casas.add(aCasa);
-
-	}
-
-	public void removeCasa(String aMorada) {
-	
-		for (Casa casa : casas) {
-            if (casa.getMorada().equals(aMorada)) {
-                casas.remove(casa);
-                return;
-            }
-        }
-
-	}
-
+	// Recebe o titular por parâmetro e devolve a conta desse titular.
 	public ContaBancaria getConta(String aNome) {
+
 		for (ContaBancaria contaBancaria : contasBancarias) {
 			if (contaBancaria.getTitular().toLowerCase().equals(aNome.toLowerCase())) { // para comparar strings é
 																						// utilizado sempre o equals
+				// toLowerCase para melhorar a comparaçao
 				return contaBancaria;
 			}
 
@@ -48,6 +40,32 @@ public class Banco {
 		return null;
 	}
 
+	// Recebe uma casa por parâmetro e acrescenta ao array (lista).
+	public void criaCasa(Casa aCasa) {
+
+		casas.add(aCasa);
+
+	}
+
+	// Função que recebe a morada de uma casa e remove essa casa da lista de casas
+	// do Banco.
+	public void removeCasa(String aMorada) {
+		for (int i = 0; i < casas.size(); i++) {
+			Casa casa = casas.get(i);
+			if (casa.getMorada().equals(aMorada)) {
+				casas.remove(casa);
+			}
+		}
+	}
+	//Retorna a margem de lucro previsto da venda de todas as casas.
+	public double getLucroPrevisto() {
+		double lucroPrev = 0;
+		for (Casa casa: casas) {
+			lucroPrev += casa.getPercentMargemLucro();
+		}
+		return lucroPrev;
+	}
+	//Getters
 	public String getNome() {
 		return nome;
 	}
@@ -56,20 +74,20 @@ public class Banco {
 		return contasBancarias;
 	}
 
+	public List<Casa> getCasas() {
+		return casas;
+	}
+	//Setters
 	public void setNome(String aNome) {
 		nome = aNome;
 	}
 
-	public List<Casa> getCasas() {
-		return casas;
-	}
-
-	public void setCasas(List<Casa> casas) {
-		this.casas = casas;
-	}
-
 	public void setContasBancarias(List<ContaBancaria> aContasBancarias) {
 		contasBancarias = aContasBancarias;
+	}
+
+	public void setCasas(List<Casa> aCasas) {
+		casas = aCasas;
 	}
 
 }

@@ -1,43 +1,71 @@
 package ficha3;
 
-
 import java.util.Date;
 
 public class Main {
 
 	public static void main(String[] args) {
-		Banco banco1 = new Banco("Santander");
-		
-		//ContaBancaria conta1 = new ContaBancaria("Juan", new Date());  
-		//ContaBancaria conta2 = new ContaBancaria("pedro", 250);  // para perceber melhor fazer da maneira seguinte
-		
-		banco1.criaConta(new ContaBancaria("Juan", new Date()));
-		banco1.criaConta(new ContaBancaria("pedro", 250));
-		
-		ContaBancaria conta1 = banco1.getConta("juan"); // nao é possivel chamar a funçao getConta se nao fizermos esta linha de codigo
+
+		System.out.println("\n----- Exercício 1 e 2-----\n");
+
+		// Criação do Banco "Santander"
+		Banco santander = new Banco("Santander");
+
+		// Acrescenta duas contas Bancarias na lista de contas bancarias do banco
+		// "Santander" , com diferentes construtores
+		santander.criaConta(new ContaBancaria("Juan", new Date()));
+		santander.criaConta(new ContaBancaria("pedro", 250));
+
+		// Criamos um objeto "conta1" e atribuimos a traves do metodo getConta que
+		// recebe o titular por parâmetro e devolve a conta do santander do titular:
+		// "juan"
+		ContaBancaria conta1 = santander.getConta("juan"); // nao é possivel chamar a funçao getConta se nao fizermos
+															// esta linha de codigo
 		System.out.println(conta1.getSaldo());
-		
-		ContaBancaria conta2 = banco1.getConta("pedro"); 
+
+		// Criamos um objeto "conta2" e atribuimos a traves do metodo getConta que
+		// recebe o titular por parâmetro e devolve a conta do santander do titular:
+		// "pedro"
+		ContaBancaria conta2 = santander.getConta("pedro");
 		System.out.println(conta2.getSaldo());
-		
+
 		conta1.depositar(500);
 		conta1.levantar(200);
 		conta2.depositar(900);
 		conta2.levantar(400);
-		
+
 		System.out.println(conta1.getInformacaoConta());
 		System.out.println(conta2.getInformacaoConta());
 
-		Casa casa1 = new Casa("Caminho da Chamorra");
-		Casa casa2 = new Casa("Caminho do Trapiche");
+		System.out.println("\n----- Exercício 3 e 4-----\n");
+
+		Casa casa1 = new Casa();
+		casa1.setMorada("Caminho do Trapiche");
+		casa1.setPrecoCusto(50_000);
+		casa1.setPrecoVenda(80_000);
+
+		Casa casa2 = new Casa("Caminho da Chamorra");
+		casa1.setPrecoCusto(180_000);
+		casa1.setPrecoVenda(300_400);
+
 		Casa casa3 = new Casa("Rua dos Alecrins");
-		banco1.criaCasa(casa1);
-		banco1.criaCasa(casa2);
-		banco1.criaCasa(casa3);
-		System.out.println(banco1.getCasas());
-		banco1.removeCasa("Caminho da Chamorra");
-		System.out.println(banco1.getCasas());
+		casa1.setPrecoCusto(42_500);
+		casa1.setPrecoVenda(76_000);
 
-		}
+		System.out.println("Morada: " + casa2.getMorada() + ", Margem de lucro: " + casa2.getMargemLucro() + ", "
+				+ casa2.getPercentMargemLucro() + "%");
+
+		System.out.println("\n----- Exercício 4 -----\n");
+
+		santander.criaCasa(casa1);
+		santander.criaCasa(casa2);
+		santander.criaCasa(casa3);
+
+		System.out.println(santander.getCasas());
+		santander.removeCasa("Caminho da Chamorra");
+		System.out.println(santander.getCasas());
+		System.out.println(
+				"Lucro previsto: " + santander.getLucroPrevisto() + " (" + santander.getCasas().size() + " casas)");
+
 	}
-
+}

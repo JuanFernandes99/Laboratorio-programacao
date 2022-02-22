@@ -9,27 +9,39 @@ public class ContaBancaria {
 	private double saldo;
 	private Date dataAbertura;
 
+	// Construtores
+
+	// Recebe por parâmetro o nome do titular e a Data de Abertura e cria uma conta
+	// bancária para esse titular com saldo zero.
 	public ContaBancaria(String aTitular, Date aDataAbertura) {
 		titular = aTitular;
 		dataAbertura = aDataAbertura;
-		saldo = 0;
+		saldo = 0.0; // Saldo zero
 	}
 
+	// Recebe por parâmetro o nome do titular e o saldo e cria uma conta
+	// bancária para esse titular na data de hoje,
 	public ContaBancaria(String aTitular, double aSaldo) {
 		titular = aTitular;
-		dataAbertura = new Date();
+		dataAbertura = new Date(); // Data de hoje
 		saldo = aSaldo;
 	}
 
+	// Métodos
+
+	// retorna uma String com o titular, o saldo da conta com duas casas decimais e
+	// a data de abertura da conta no formato DD/MM/YYYY.
 	public String getInformacaoConta() {
-		DecimalFormat df = new DecimalFormat("0.00");
-		String saldoDecimal = df.format(saldo);
-		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");  
-	    String strDate= formatter.format(dataAbertura);  
-	   
-		return "Titular: " + titular + " Saldo atual " + saldoDecimal + "€" + " Data Abertura: " + strDate;
+		DecimalFormat df = new DecimalFormat("0.00"); // Feito para retornar o saldo com duas casas decimais
+		String saldoDecimal = df.format(saldo); // O saldo é formatado numa String para retornar o saldo com duas casas
+												// decimais
+		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy"); // Formatar a data para dd/MM/yyyy
+		String strDate = formatter.format(dataAbertura); // Formatar a data para dd/MM/yyyy
+
+		return "Titular: " + titular + "/ Saldo atual " + saldoDecimal + "€" + "/ Data Abertura: " + strDate;
 	}
 
+	// Recebe o valor a depositar na conta (double) e atualiza o respetivo saldo.
 	public void depositar(double valorDeposito) {
 
 		saldo += valorDeposito;
@@ -37,8 +49,10 @@ public class ContaBancaria {
 		System.out.println("Saldo atualizado:" + saldo + "€");
 	}
 
+	// Recebe o valor a levantar da conta (double) e atualiza o respetivo saldo.
+	// Não devem ser permitidos levantamentos que coloquem o saldo negativo.
 	public void levantar(double valorLevantamento) {
-		if (valorLevantamento < saldo) {
+		if (valorLevantamento < saldo) { // Verificação que não permite que o saldo fique negativo
 
 			saldo -= valorLevantamento;
 			System.out.println("o Titular " + titular + " fez um levantamento de: " + valorLevantamento + "€");
@@ -48,11 +62,14 @@ public class ContaBancaria {
 		}
 	}
 
+	// Getters
+
 	public String getTitular() {
 		return titular;
 	}
 
 	public double getSaldo() {
+		System.out.println("Saldo do Titular " + titular + ":");
 		return saldo;
 	}
 
@@ -60,6 +77,7 @@ public class ContaBancaria {
 		return dataAbertura;
 	}
 
+	//Setter
 	public void setSaldo(double aSaldo) {
 		saldo = aSaldo;
 	}
