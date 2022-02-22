@@ -37,7 +37,7 @@ public class Main {
 		System.out.println(conta1.getInformacaoConta());
 		System.out.println(conta2.getInformacaoConta());
 
-		System.out.println("\n----- Exercício 3 e 4-----\n");
+		System.out.println("\n----- Exercício 3 -----\n");
 
 		Casa casa1 = new Casa();
 		casa1.setMorada("Caminho do Trapiche");
@@ -45,15 +45,15 @@ public class Main {
 		casa1.setPrecoVenda(80_000);
 
 		Casa casa2 = new Casa("Caminho da Chamorra");
-		casa1.setPrecoCusto(180_000);
-		casa1.setPrecoVenda(300_400);
+		casa2.setPrecoCusto(180_000);
+		casa2.setPrecoVenda(300_400);
 
 		Casa casa3 = new Casa("Rua dos Alecrins");
-		casa1.setPrecoCusto(42_500);
-		casa1.setPrecoVenda(76_000);
+		casa3.setPrecoCusto(42_500);
+		casa3.setPrecoVenda(76_000);
 
-		System.out.println("Morada: " + casa2.getMorada() + ", Margem de lucro: " + casa2.getMargemLucro() + ", "
-				+ casa2.getPercentMargemLucro() + "%");
+		System.out.println("Morada: " + casa2.getMorada() + " , Margem de lucro: " + casa2.getMargemLucro()
+				+ ", Percentagem do margem de lucro: " + casa2.getPercentMargemLucro() + " %");
 
 		System.out.println("\n----- Exercício 4 -----\n");
 

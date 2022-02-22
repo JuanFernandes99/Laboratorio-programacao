@@ -23,18 +23,14 @@ public class Casa {
 	// de custo).
 	public double getMargemLucro() {
 
-		double lucroCasa = precoVenda - precoCusto; // Criar variável lucroCasa cá porque não vai ser preciso em mais
-													// nenhum lugar;
-		return lucroCasa;
+		return precoVenda - precoCusto;
 	}
 
 	// Retorna a percentagem da margem de lucro (a razão entre o preço de venda e o
 	// preço de custo).
 	public double getPercentMargemLucro() {
 
-		double PercentMargemLucro = (getMargemLucro() / (precoVenda * 100));
-
-		return PercentMargemLucro;
+		return getMargemLucro() / (precoVenda * 100);
 
 	}
 
