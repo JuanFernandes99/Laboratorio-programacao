@@ -39,15 +39,16 @@ public class Main {
 
 		System.out.println("\n----- Exercício 3 -----\n");
 
+		// Criação da casa "casa1" com o construtor vazio
 		Casa casa1 = new Casa();
 		casa1.setMorada("Caminho do Trapiche");
 		casa1.setPrecoCusto(50_000);
 		casa1.setPrecoVenda(80_000);
-
+		// Criação da casa "casa2" com o construtor vazio
 		Casa casa2 = new Casa("Caminho da Chamorra");
 		casa2.setPrecoCusto(180_000);
 		casa2.setPrecoVenda(300_400);
-
+		// Criação da casa "casa3" com o construtor vazio
 		Casa casa3 = new Casa("Rua dos Alecrins");
 		casa3.setPrecoCusto(42_500);
 		casa3.setPrecoVenda(76_000);
@@ -57,6 +58,7 @@ public class Main {
 
 		System.out.println("\n----- Exercício 4 -----\n");
 
+		// Acrescenta tres casas na lista de casas do banco "Santander".
 		santander.criaCasa(casa1);
 		santander.criaCasa(casa2);
 		santander.criaCasa(casa3);
