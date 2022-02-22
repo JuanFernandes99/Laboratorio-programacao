@@ -56,6 +56,7 @@ public class Main {
 		System.out.println("Morada: " + casa2.getMorada() + " , Margem de lucro: " + casa2.getMargemLucro()
 				+ ", Percentagem do margem de lucro: " + casa2.getPercentMargemLucro() + " %");
 
+		
 		System.out.println("\n----- Exercício 4 -----\n");
 
 		// Acrescenta tres casas na lista de casas do banco "Santander".
