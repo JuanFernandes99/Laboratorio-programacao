@@ -1,11 +1,12 @@
 package ficha4;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Cesto {
 
-	private final int capacidadeCesto = 3; // verificar
+	private final int capacidadeCesto = 5; // verificar
 	private int totalItems;
 	private List<Fruta> frutas;
 
@@ -24,9 +25,42 @@ public class Cesto {
 
 	}
 
+	public double valorCesto() {
+		double valor = 0;
+
+		for (Fruta fruta : frutas) {
+
+			valor += fruta.pagar();
+		}
+		return valor;
+	}
+/*
+	public int numFrutoExistente(String tipoFruta) {
+		tipoFruta.toLowerCase();
+		for (Fruta fruta : frutas) {
+
+			if (fruta.getNome().toLowerCase().equals(tipoFruta)) {
+
+				if (fruta instanceof FrutaUnidade) {
+
+					return ((FrutaUnidade) fruta).getUnidade();
+
+				} else if (fruta instanceof FrutaVolume) {
+
+					System.out.println("Quantidade de " + fruta + " por volume: " + ((FrutaVolume) fruta).getVolume() + " m3");
+
+				} else if (fruta instanceof FrutaPeso) {
+
+					System.out.println("Quantidade de " + fruta + " por peso: " + ((FrutaPeso) fruta).getPeso() + " Kg");
+				}
+			}
+		}
+
+	}
+*/
 	@Override
-	public String toString() { // ver isto
-		// for e criar uma string no final // obg
+	public String toString() {
+
 		return "Cesto{" + "frutas=" + frutas + '}';
 	}
 

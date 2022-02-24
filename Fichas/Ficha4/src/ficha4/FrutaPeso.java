@@ -2,7 +2,7 @@ package ficha4;
 
 public class FrutaPeso extends Fruta {
 
-	private double peso;
+	private float peso;
 
 	public FrutaPeso(String aNome, double aPrecoBase) {
 		super(aNome, aPrecoBase);
@@ -12,14 +12,13 @@ public class FrutaPeso extends Fruta {
 	@Override
 	public double pagar() {
 		return precoBase * peso;
-
 	}
 
-	public double getPeso() {
+	public float getPeso() {
 		return peso;
 	}
 
-	public void setPeso(double aPeso) {
+	public void setPeso(float aPeso) {
 		peso = aPeso;
 	}
 

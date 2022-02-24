@@ -2,7 +2,7 @@ package ficha4;
 
 public class FrutaVolume extends Fruta {
 
-	private double volume;
+	private float volume;
 
 	public FrutaVolume(String aNome, double aPrecoBase) {
 		super(aNome, aPrecoBase);
@@ -14,14 +14,13 @@ public class FrutaVolume extends Fruta {
 	public double pagar() {
 
 		return precoBase * volume;
-
 	}
 
-	public double getVolume() {
+	public float getVolume() {
 		return volume;
 	}
 
-	public void setVolume(double aVolume) {
+	public void setVolume(float aVolume) {
 		volume = aVolume;
 	}
 
