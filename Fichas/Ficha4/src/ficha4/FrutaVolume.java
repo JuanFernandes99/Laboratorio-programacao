@@ -23,5 +23,6 @@ public class FrutaVolume extends Fruta {
 	public void setVolume(float aVolume) {
 		volume = aVolume;
 	}
+	
 
 }
