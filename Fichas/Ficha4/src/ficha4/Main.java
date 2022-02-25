@@ -58,7 +58,7 @@ public class Main {
 
 		// Print da quantidade de frutos por unidade, peso e volume
 		System.out.println("Quantidade de fruta(s) por unidade no cesto: "
-				+ cesto.quantidadeFrutoPorTipo("FrutaUnidade") + " unidades");
+				+ cesto.quantidadeFrutoPorTipo("FrutaUnidade") + " unidad(es)");
 		System.out.println(
 				"Quantidade de fruta(s) por peso no cesto: " + cesto.quantidadeFrutoPorTipo("FrutaPeso") + " gramas");
 		System.out.println(
