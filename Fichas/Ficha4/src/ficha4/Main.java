@@ -29,6 +29,7 @@ public class Main {
 		Cesto cesto = new Cesto();
 
 		// inserir no cesto diferentes tipos de fruta.
+
 		cesto.insereFruta(maca);
 		cesto.insereFruta(abacate);
 		cesto.insereFruta(pera);
@@ -51,9 +52,17 @@ public class Main {
 		System.out.println("Total a pagar pelos produtos do cesto: " + paraDuasCasas(cesto.valorCesto()));
 
 		// Print do número de frutos por unidade, peso e volume
-		System.out.println("Fruta(s) por unidade no cesto: " + cesto.numFrutoPorTipo("FrutaUnidade"));
-		System.out.println("Fruta(s) por peso no cesto: " + cesto.numFrutoPorTipo("FrutaPeso"));
-		System.out.println("Fruta(s) por volume no cesto: " + cesto.numFrutoPorTipo("FrutaVolume"));
+		System.out.println("Número de fruta(s) por unidade no cesto: " + cesto.numFrutoPorTipo("FrutaUnidade"));
+		System.out.println("Número de fruta(s) por peso no cesto: " + cesto.numFrutoPorTipo("FrutaPeso"));
+		System.out.println("Número de fruta(s) por volume no cesto: " + cesto.numFrutoPorTipo("FrutaVolume"));
+
+		// Print da quantidade de frutos por unidade, peso e volume
+		System.out.println("Quantidade de fruta(s) por unidade no cesto: "
+				+ cesto.quantidadeFrutoPorTipo("FrutaUnidade") + " unidades");
+		System.out.println(
+				"Quantidade de fruta(s) por peso no cesto: " + cesto.quantidadeFrutoPorTipo("FrutaPeso") + " gramas");
+		System.out.println(
+				"Quantidade de fruta(s) por volume no cesto: " + cesto.quantidadeFrutoPorTipo("FrutaVolume") + " m3");
 
 		// Print do valor dos frutos por unidade, peso e volume
 		System.out.println(
@@ -72,7 +81,7 @@ public class Main {
 		// Aplicando um desconto de 50% na pera
 		pera.setPercentagemDesconto(50);
 		System.out
-				.println("Preço total da banana com desconto de " + pera.getPercentagem() + "% :" + pera.pagar() + "€");
+				.println("Preço total da pera com desconto de " + pera.getPercentagem() + "% :" + pera.pagar() + "€");
 	}
 
 	// Método para limitar os resultados para duas casas decimais

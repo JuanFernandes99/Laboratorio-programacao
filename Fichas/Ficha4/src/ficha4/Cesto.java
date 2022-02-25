@@ -4,13 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import fruta.Fruta;
+import fruta.FrutaPeso;
+import fruta.FrutaUnidade;
+import fruta.FrutaVolume;
 
 public class Cesto {
 
 	// Atributos
 	private final int CAP_MAX = 100;
 	private int totalItems;
-
 	private List<Fruta> frutas;
 
 	// Construtor Vazio
@@ -53,6 +55,29 @@ public class Cesto {
 			}
 		}
 		return quantidade;
+	}
+	// Método que determina a quantidade de frutos de um dado tipo existentes no cesto.
+	public int quantidadeFrutoPorTipo(String tipoFruta) {
+		int quantFruto = 0;
+		for (Fruta fruta : frutas) {
+
+			if (fruta.getClass().getSimpleName().equals(tipoFruta)) {
+
+				if (fruta instanceof FrutaUnidade) {
+
+					quantFruto += ((FrutaUnidade) fruta).getUnidade();
+
+				} else if (fruta instanceof FrutaVolume) {
+
+					quantFruto += ((FrutaVolume) fruta).getVolume();
+
+				} else if (fruta instanceof FrutaPeso) {
+
+					quantFruto += ((FrutaPeso) fruta).getPeso();
+				}
+			}
+		}
+		return quantFruto;
 	}
 
 	// Método que determina o valor total gasto em frutos de um dado tipo
