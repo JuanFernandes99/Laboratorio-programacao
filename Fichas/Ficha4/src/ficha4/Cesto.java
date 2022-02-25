@@ -1,6 +1,5 @@
 package ficha4;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,30 +33,54 @@ public class Cesto {
 		}
 		return valor;
 	}
-/*
-	public int numFrutoExistente(String tipoFruta) {
-		tipoFruta.toLowerCase();
+
+	public int numFrutoPorTipo(String tipoFruta) {
+		int quantFruto = 0;
 		for (Fruta fruta : frutas) {
 
-			if (fruta.getNome().toLowerCase().equals(tipoFruta)) {
+			if (fruta.getClass().getSimpleName().equals(tipoFruta)) {
 
 				if (fruta instanceof FrutaUnidade) {
 
-					return ((FrutaUnidade) fruta).getUnidade();
+					quantFruto += ((FrutaUnidade) fruta).getUnidade();
 
 				} else if (fruta instanceof FrutaVolume) {
 
-					System.out.println("Quantidade de " + fruta + " por volume: " + ((FrutaVolume) fruta).getVolume() + " m3");
+					quantFruto += ((FrutaVolume) fruta).getVolume();
 
 				} else if (fruta instanceof FrutaPeso) {
 
-					System.out.println("Quantidade de " + fruta + " por peso: " + ((FrutaPeso) fruta).getPeso() + " Kg");
+					quantFruto += ((FrutaPeso) fruta).getPeso();
 				}
 			}
 		}
-
+		return quantFruto;
 	}
-*/
+	
+	public double valorTotalPorTipo(String tipoFruta) {
+		double valorTipo = 0;
+		
+		for (Fruta fruta : frutas) {
+
+			if (fruta.getClass().getSimpleName().equals(tipoFruta)) {
+
+				if (fruta instanceof FrutaUnidade) {
+
+					valorTipo += ((FrutaUnidade) fruta).pagar();
+
+				} else if (fruta instanceof FrutaVolume) {
+
+					valorTipo += ((FrutaVolume) fruta).pagar();
+
+				} else if (fruta instanceof FrutaPeso) {
+
+					valorTipo += ((FrutaPeso) fruta).pagar();
+				}
+			}
+		}
+		return valorTipo;
+	}
+
 	@Override
 	public String toString() {
 

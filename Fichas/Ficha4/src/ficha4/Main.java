@@ -35,19 +35,18 @@ public class Main {
 		System.out.println(cesto1.valorCesto());
 		double total = cesto1.valorCesto();
 		System.out.println(paraDuasCasas(total));
-		
-		//cesto1.numFrutoExistente("maca");
-		//cesto1.numFrutoExistente("pera");
-		//cesto1.numFrutoExistente("banana");
+
+		System.out.println("Fruta por peso no cesto: " + cesto1.numFrutoPorTipo("FrutaUnidade"));
+		System.out.println("Valor da fruta por peso no cesto: " + cesto1.valorTotalPorTipo("FrutaUnidade"));
+
 	}
 
 	private static void leitorCodigoBarras(Fruta aFruta) {
 		System.out.println("o valor a pagar do produto " + aFruta + ":" + df.format(aFruta.pagar()) + "$");
 	}
-	
+
 	private static String paraDuasCasas(double dinheiro) {
 		return df.format(dinheiro) + "€";
 	}
-
 
 }
