@@ -1,51 +1,32 @@
 # Laboratorio_de_programacao
 
-##Resumo ficha 4
-<pre>
-Ex. 1:Crie a classe ContaBancária com os seguintes atributos e métodos:
+**Resumo Ficha de exercícios 4**
 
-   1-) Criar uma Classe ContaBancária que tem como atributos privados: String Titular, double Saldo e Date DataAbertura(data atual);
-   2-) Construtor que tem o Titular como um atributo obrigatório; Apresenta da data do dia atua e inicia o saldo a 0(zero);
-   3-) Criar um método getInformaçãoConta() que retorna da seguinte forma (Titular: José Fonseca, Saldo: €321.50, Data Abertura: 22/2/2022;
-   4-) Criar um método depositar() que recebe o valor a depositar e atualiza o saldo (relembrar que inicializou a zero);
-   5-) Criar um método levantar() que permite levantar dinheiro da conta, atualiza a conta e não permite o levantamento que coloquem o saldo negativo;
+Ex. 1:Crie um novo projeto. Numa loja, toda a fruta vendida tem um nome e um preço base. Porém, a loja vende fruta em três modalidades: à unidade, ao peso ou pelo volume. Crie uma hierarquia onde Fruta é uma classe abstrata, com as subclasses FrutaUnidade, FrutaPeso, e FrutaVolume.
+
+   1-) Criar uma classe abstrata deverá ter as variáveis comuns a todas as subclasses, bem como o método abstrato double pagar().
+   2-) Defina as classes FrutaUnidade, FrutaPeso, e FrutaVolume, como subclasses de Fruta, dando a adequada implementação ao método double pagar() para cada caso.
    
-       Na main: criar contas, efetuar depósitos e levantamentos, imprimir a informação que atualiza o saldo.
+       Na main: testar as classes acima descritas.
    
- Ex. 2:Codifique a classe Banco com os seguintes atributos e métodos:
+ Ex. 2:Defina a classe Cesto, que representa um conjunto de frutas adquiridas. Esta classe deverá implementar o seguinte:
  
-   1-) Criar uma Classe Banco que tem como atributos: String nome e uma lista de contas do tipo ContaBancaria;
-   2-) Construtor que tem o nome como atributo obrigatório e limita a lista de contas para 100 contas;
-   3-) Criar um método criaConta() que recebe uma conta e acrescenta à lista;
-   4-) Criar um método getConta() que recebe o titular e devolve a conta do mesmo;
+   1-) Uma variável de instância para o total de items no cesto e uma constante que determina a capacidade máxima do cesto como sendo 100. 
+   2-) Inclua também um array de Fruta para representar o cesto, que é um conjunto de frutas.
+   3-) Um método que insere no cesto diferentes tipos de fruta.
+   4-) Um método que calcula o valor total da fruta no cesto.
+   5-) Um método que determina o número de frutos de um dado tipo existentes no cesto.
+   6-) Um método que determina o valor total gasto em frutos de um dado tipo.
    
-    Na main: criar contas, efetuar depósitos e levantamentos, imprimir a informação que atualiza o saldo.
+    Na main: crie um cesto e insira vários tipos de fruta. Teste todos os métodos.
    
-Ex. 3: Crie uma classe Casa, a qual deverá ter os seguintes atributos e métodos:
+Ex. 3: Toda a fruta a peso e toda a fruta a volume podem ter um desconto de uma determinada percentagem.
  
-   1-) Criar uma Classe Casa que tem como atributos privados: String morada, double precoCusto, double precoVenda;
-   2-) Construtor sem argumentos;
-   3-) Construtor com a morada obrigatória;
-   4-) Criar um método getMargemLucro() que retorna a margem de lucro da casa;
-   5-) Criar um método getPercentMargemLucro() que retorna a percentagem da margem de lucro;
+   1-) Crie uma interface Descontavel que tem um método double descontar() que será implementado pela classe FrutaPeso e pela class FrutaVolume.
+   2-) Faça as alterações necessárias nestas classes, entre as quais a adição de um método setPercentagemDesconto(double percentagem).
    
-    Na main: criar casas com diferentes valores dos atributos;
-   
-  Ex. 4:
- 
-   1-) Na classe Banco adicionar uma lista de casas;
-   2-) Criar um método para adicionar casas;
-   3-) Criar um método que recebe a morada e remova essa casa da lista;
-   4-) Criar um método getLucroPrevisto que retorna a margem de lucro previsto da venda de todas as casas;
- 
-    Na main: apresentar a lista de casas e depois remover uma casa e apresentar a lista novamente;
-   
-   Ex. 5:
- 
-   1-) Criar o diagrama de classes UML;
-   2-) Adicionar uma descrição do projeto no ficheiro README;
-   3-) Adicionar o diagrama de classes UML ao ficheiro README;
-</pre>
+    Na main: testar as respetivas alterações.
+
 
 DiagramadeClasses: 
 
