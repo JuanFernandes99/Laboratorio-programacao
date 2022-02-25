@@ -36,6 +36,13 @@ public class Main {
 		double total = cesto1.valorCesto();
 		System.out.println(paraDuasCasas(total));
 
+		banana.setPercentagemDesconto(30);
+		
+		System.out.println("banana com desconto: " + banana.descontar());
+
+		System.out.println( "banana pagar " + banana.pagar());
+		
+		
 		System.out.println("Fruta por peso no cesto: " + cesto1.numFrutoPorTipo("FrutaUnidade"));
 		System.out.println("Valor da fruta por peso no cesto: " + cesto1.valorTotalPorTipo("FrutaUnidade"));
 
