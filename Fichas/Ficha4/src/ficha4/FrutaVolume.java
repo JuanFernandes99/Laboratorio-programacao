@@ -19,6 +19,7 @@ public class FrutaVolume extends Fruta implements IDescontavel {
 	
 	@Override
 	public double descontar() {
+		
 		       
 		return (precoBase * volume) * percentagem / 100;
 	}

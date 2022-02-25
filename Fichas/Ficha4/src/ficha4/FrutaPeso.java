@@ -15,17 +15,17 @@ public class FrutaPeso extends Fruta implements IDescontavel {
 
 		return (precoBase * peso) - descontar();
 	}
-	
+
 	@Override
 	public double descontar() {
-		       
+
 		return (precoBase * peso) * percentagem / 100;
 	}
 
 	public float getPeso() {
 		return peso;
 	}
-	
+
 	public double getPercentagem() {
 		return percentagem;
 	}

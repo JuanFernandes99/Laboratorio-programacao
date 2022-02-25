@@ -12,9 +12,9 @@ public abstract class Fruta {
 
 	public abstract double pagar();
 
-	public String toString() { // ver isto
-		// for e criar uma string no final // obg
-		return nome ;
+	@Override
+	public String toString() {
+		return "Fruta [nome=" + nome + ", precoBase=" + precoBase + "]";
 	}
 	public String getNome() {
 		return nome;
