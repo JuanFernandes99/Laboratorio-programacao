@@ -49,4 +49,5 @@ Ex. 3: Crie uma classe Casa, a qual deverá ter os seguintes atributos e método
 
 DiagramadeClasses: 
 
-![DiagramadeClasses_Juan](https://user-images.githubusercontent.com/97111394/155163310-0a96e7a7-d3a0-4854-92e0-e5be500265d5.png)
+![DiagramadeClasses_Juan](https://user-images.githubusercontent.com/97111394/155800586-00fe270b-a19d-47f0-836d-c2a40059c790.jpg)
+
