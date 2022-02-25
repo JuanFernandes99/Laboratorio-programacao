@@ -29,8 +29,3 @@ Toda a fruta a peso e toda a fruta a volume podem ter um desconto de uma determi
    **2-)** Faça as alterações necessárias nestas classes, entre as quais a adição de um método setPercentagemDesconto(double percentagem).                                  
    
     Na main: testar as respetivas alterações.
-
-
-DiagramadeClasses: 
-
-![DiagramadeClasses_Juan](https://user-images.githubusercontent.com/97111394/155163310-0a96e7a7-d3a0-4854-92e0-e5be500265d5.png)
