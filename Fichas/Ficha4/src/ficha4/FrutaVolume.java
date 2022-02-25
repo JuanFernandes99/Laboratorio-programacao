@@ -14,7 +14,7 @@ public class FrutaVolume extends Fruta implements IDescontavel {
 	@Override
 	public double pagar() {
 
-		return precoBase * volume;
+		return (precoBase * volume) - descontar();
 	}
 	
 	@Override

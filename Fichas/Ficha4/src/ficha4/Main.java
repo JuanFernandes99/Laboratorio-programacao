@@ -38,9 +38,9 @@ public class Main {
 
 		banana.setPercentagemDesconto(30);
 		
-		System.out.println("banana com desconto: " + banana.descontar());
+		System.out.println("Desconto da banana: " + banana.descontar());
 
-		System.out.println( "banana pagar " + banana.pagar());
+		System.out.println("Banana com desconto: " + banana.pagar());
 		
 		
 		System.out.println("Fruta por peso no cesto: " + cesto1.numFrutoPorTipo("FrutaUnidade"));
