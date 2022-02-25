@@ -3,27 +3,37 @@ package ficha4;
 import java.util.ArrayList;
 import java.util.List;
 
+import fruta.Fruta;
+
 public class Cesto {
 
-	private final int capacidadeCesto = 5; // verificar
+	// Atributos
+	private final int CAP_MAX = 100;
 	private int totalItems;
+
 	private List<Fruta> frutas;
 
+	// Construtor Vazio
 	public Cesto() {
-
+		totalItems = 0;
 		frutas = new ArrayList<Fruta>();
 	}
 
+	// Métodos
+
+	// Método que insere no cesto diferentes tipos de fruta.
 	public void insereFruta(Fruta aFruta) {
-		if (frutas.size() <= capacidadeCesto) {
+		if (frutas.size() <= CAP_MAX) { // Verificaçao da capacidade do cesto
 			frutas.add(aFruta);
-			System.out.println(aFruta.getNome() + " adicionada ao cesto");
+			totalItems++;
+			System.out.println(aFruta.getNome() + " adicionada ao cesto" + ", Total items no cesto: " + totalItems);
 		} else {
 			System.out.println("nao tem espaço");
 		}
 
 	}
 
+	// Método que calcula o valor total da fruta no cesto.
 	public double valorCesto() {
 		double valor = 0;
 
@@ -34,77 +44,40 @@ public class Cesto {
 		return valor;
 	}
 
+	// Método que determina o número de frutos de um dado tipo existentes no cesto.
 	public int numFrutoPorTipo(String tipoFruta) {
-		int quantFruto = 0;
+		int quantidade = 0;
 		for (Fruta fruta : frutas) {
-
 			if (fruta.getClass().getSimpleName().equals(tipoFruta)) {
-
-				if (fruta instanceof FrutaUnidade) {
-
-					quantFruto += ((FrutaUnidade) fruta).getUnidade();
-
-				} else if (fruta instanceof FrutaVolume) {
-
-					quantFruto += ((FrutaVolume) fruta).getVolume();
-
-				} else if (fruta instanceof FrutaPeso) {
-
-					quantFruto += ((FrutaPeso) fruta).getPeso();
-				}
+				quantidade += 1;
 			}
 		}
-		return quantFruto;
+		return quantidade;
 	}
-	
+
+	// Método que determina o valor total gasto em frutos de um dado tipo
 	public double valorTotalPorTipo(String tipoFruta) {
 		double valorTipo = 0;
-		
+
 		for (Fruta fruta : frutas) {
 
 			if (fruta.getClass().getSimpleName().equals(tipoFruta)) {
 
-				if (fruta instanceof FrutaUnidade) {
-
-					valorTipo += ((FrutaUnidade) fruta).pagar();
-
-				} else if (fruta instanceof FrutaVolume) {
-
-					valorTipo += ((FrutaVolume) fruta).pagar();
-
-				} else if (fruta instanceof FrutaPeso) {
-
-					valorTipo += ((FrutaPeso) fruta).pagar();
-				}
+				valorTipo += fruta.pagar();
 			}
 		}
 		return valorTipo;
+	}
+
+	// Getter
+	public int getTotalItems() {
+		return totalItems;
 	}
 
 	@Override
 	public String toString() {
 
 		return "Cesto{" + "frutas=" + frutas + '}';
-	}
-
-	public int getCapacidadeCesto() {
-		return capacidadeCesto;
-	}
-
-	public int getTotalItems() {
-		return totalItems;
-	}
-
-	public List<Fruta> getFrutas() {
-		return frutas;
-	}
-
-	public void setTotalItems(int aTotalItems) {
-		totalItems = aTotalItems;
-	}
-
-	public void setFrutas(List<Fruta> aFrutas) {
-		frutas = aFrutas;
 	}
 
 }

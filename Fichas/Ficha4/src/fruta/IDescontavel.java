@@ -1,4 +1,4 @@
-package ficha4;
+package fruta;
 
 public interface IDescontavel {
 
