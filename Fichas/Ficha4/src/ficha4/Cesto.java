@@ -26,6 +26,7 @@ public class Cesto {
 	// Método que insere no cesto diferentes tipos de fruta.
 	public void insereFruta(Fruta aFruta) {
 		if (frutas.size() <= CAP_MAX) { // Verificaçao da capacidade do cesto
+			// também podia colocar totalitems< cap_max
 			frutas.add(aFruta);
 			totalItems++;
 			System.out.println(aFruta.getNome() + " adicionada ao cesto" + ", Total items no cesto: " + totalItems);
@@ -56,7 +57,9 @@ public class Cesto {
 		}
 		return quantidade;
 	}
-	// Método que determina a quantidade de frutos de um dado tipo existentes no cesto.
+
+	// Método que determina a quantidade de frutos de um dado tipo existentes no
+	// cesto.
 	public int quantidadeFrutoPorTipo(String tipoFruta) {
 		int quantFruto = 0;
 		for (Fruta fruta : frutas) {
