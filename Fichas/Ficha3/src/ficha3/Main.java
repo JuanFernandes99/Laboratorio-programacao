@@ -14,7 +14,7 @@ public class Main {
 		// Acrescenta duas contas Bancarias na lista de contas bancarias do banco
 		// "Santander" , com diferentes construtores
 		santander.criaConta(new ContaBancaria("Juan", new Date()));
-		santander.criaConta(new ContaBancaria("pedro", 250));
+		santander.criaConta(new ContaBancaria("Pedro", 250));
 
 		// Criamos um objeto "conta1" e atribuimos a traves do metodo getConta que
 		// recebe o titular por parâmetro e devolve a conta do santander do titular:

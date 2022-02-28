@@ -30,7 +30,7 @@ public class Banco {
 	public ContaBancaria getConta(String aNome) {
 
 		for (ContaBancaria contaBancaria : contasBancarias) {
-			if (contaBancaria.getTitular().toLowerCase().equals(aNome.toLowerCase())) { // para comparar strings é
+			if (contaBancaria.getTitular().toLowerCase().equals(aNome)) { // para comparar strings é
 																						// utilizado sempre o equals
 				// toLowerCase para melhorar a comparaçao
 				return contaBancaria;
