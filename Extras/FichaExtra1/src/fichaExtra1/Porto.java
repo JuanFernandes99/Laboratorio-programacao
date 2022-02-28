@@ -15,17 +15,17 @@ public class Porto {
 		localizacao = aLocalizacao;
 		navios = new ArrayList<Navio>();
 	}
-	
-	public void insereNavio(Navio aNavio) {
+
+	public void insereNavio(Navio aNavio) throws Exception {
+
 		for (Navio navio : navios) {
 			if (navio.getIdentificador().equals(aNavio.getIdentificador())) {
-				navios.add(aNavio);
+				throw new Exception("Navios com id iguais");
+			}
 		}
-		else {
-			System.out.println("id iguais");
-		}
+		navios.add(aNavio);
 	}
-	}
+
 	public String getNome() {
 		return nome;
 	}

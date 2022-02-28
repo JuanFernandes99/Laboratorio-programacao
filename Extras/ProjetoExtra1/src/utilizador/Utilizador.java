@@ -1,17 +1,18 @@
 package utilizador;
 
-public class Utilizador {
+public abstract class Utilizador {
 
 	protected static int utilizadorCounter = 1;
 	protected String nome;
 	protected int idade;
 	protected int id;
 	
-	public Utilizador(String nome, int idade) {
-		nome = nome;
-		idade = idade;
+	public Utilizador(String aNome, int aIdade) {
+		nome = aNome;
+		idade = aIdade;
 		id = utilizadorCounter;
 		utilizadorCounter++;
+		
 	}
 
 	public String getNome() {

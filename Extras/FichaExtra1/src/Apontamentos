@@ -1,0 +1,19 @@
+	//opçao sem exception
+	
+	public void insereNavio(Navio aNavio) {
+		boolean temBarco = false; // boolean para adicionar o primeiro barco
+		
+		for (Navio navio : navios) {
+			if (navio.getIdentificador().equals(aNavio.getIdentificador())) {
+				temBarco= true;
+				System.out.println("navios com id iguais");
+				System.exit(0);
+			}
+		}
+		if (!temBarco) {
+			navios.add(aNavio);	
+		}
+		
+	}
+	
+	
