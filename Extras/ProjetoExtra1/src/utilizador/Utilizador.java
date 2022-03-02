@@ -40,7 +40,7 @@ public abstract class Utilizador {
 
 	@Override
 	public String toString() {
-		return "Utilizador [nome=" + nome + ", idade=" + idade + ", tipo="+ getClass().getSimpleName()+ ", id=" + id + "]";
+		return "Utilizador: [Nome=" + nome + ", Idade=" + idade + ", Tipo="+ getClass().getSimpleName()+ ", Id=" + id + "]";
 	}
 	
 }
