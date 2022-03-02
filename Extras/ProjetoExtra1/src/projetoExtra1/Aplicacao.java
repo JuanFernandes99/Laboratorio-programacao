@@ -45,4 +45,11 @@ public class Aplicacao {
 		tipo = aTipo;
 	}
 
+	@Override
+	public String toString() {
+		return "Aplicacao [nomeApp=" + nomeApp + ", preco=" + preco + "€, avaliacao=" + avaliacao + ", tipo=" + tipo
+				+ "]";
+	}
+	
+
 }

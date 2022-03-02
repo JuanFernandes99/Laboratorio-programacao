@@ -12,7 +12,6 @@ public abstract class Utilizador {
 		idade = aIdade;
 		id = utilizadorCounter;
 		utilizadorCounter++;
-		
 	}
 
 	public String getNome() {
@@ -39,6 +38,9 @@ public abstract class Utilizador {
 		id = aId;
 	}
 
-	
+	@Override
+	public String toString() {
+		return "Utilizador [nome=" + nome + ", idade=" + idade + ", tipo="+ getClass().getSimpleName()+ ", id=" + id + "]";
+	}
 	
 }
