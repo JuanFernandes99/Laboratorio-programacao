@@ -85,7 +85,8 @@
     {
         "Primeiro_nome": "Diogo",
         "Ultimo_nome": "Crespo",
-        "Idade": 30
+        "Idade": 30,
+        "Saldo": 0
     },
     {
         "Primeiro_nome": "João",

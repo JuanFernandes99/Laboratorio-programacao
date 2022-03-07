@@ -13,10 +13,13 @@ public class Mercado {
 		pessoas = new ArrayList<Pessoa>();
 	}
 
-	public void inserePessoa(Pessoa aPessoa) {
-		pessoas.add(aPessoa);
+	public void inserePessoaJson(ArrayList<Pessoa> arrayList) {
+		pessoas.addAll(arrayList);
 	}
 	
+	public void inserirPessoa(Pessoa pessoa) {
+		pessoas.add(pessoa);
+	}
 	public double saldoAcumulado() {
 		double valor = 0;
 		for (Pessoa pessoa : pessoas) { 
@@ -44,7 +47,7 @@ public class Mercado {
 
 	@Override
 	public String toString() {
-		return "Mercado [Nome=" + nome + ", Pessoa=" + pessoas + "]";
+		return "Mercado [Nome=" + nome + ", \nPessoa=" + pessoas + "]";
 	}
 
 }
