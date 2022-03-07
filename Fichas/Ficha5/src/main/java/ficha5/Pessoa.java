@@ -56,8 +56,8 @@ public class Pessoa {
 
 	@Override
 	public String toString() {
-		return "Pessoa [Primeiro nome= " + primeiroNome + ", Ultimo nome= " + ultimoNome + ", Idade= " + idade + ", Saldo= "
-				+ saldo + "€, Id= " + id + "]\n";
+		return "\nPessoa [Primeiro nome= " + primeiroNome + ", Ultimo nome= " + ultimoNome + ", Idade= " + idade + ", Saldo= "
+				+ saldo + "€, Id= " + id + "]";
 	}
 	
 }
