@@ -12,7 +12,7 @@ public class Compra {
 	private double valor;
 	private List<Aplicacao> aplicacoes; // atençao ao apagar as listas
 
-	public Compra(Cliente aCliente, List<Aplicacao> aAplicacoes) { // atençao a isto
+	public Compra(Cliente aCliente, List<Aplicacao> aAplicacoes) {// atençao a isto
 		aplicacoes = aAplicacoes;
 		dataCompra = new Date();
 		valor = aplicacoes.stream().mapToDouble(Aplicacao::getPreco).sum();
