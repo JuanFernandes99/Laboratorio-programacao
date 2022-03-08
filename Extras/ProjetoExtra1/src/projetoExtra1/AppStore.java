@@ -7,17 +7,11 @@ import utilizador.Utilizador;
 public class AppStore {
 	private String nome;
 	private List<Aplicacao> aplicacoes;
-	private List<Compra> compras;
 	private List<Utilizador> utilizadores;
 
 	public AppStore(String nome) {
 		aplicacoes = new ArrayList<Aplicacao>();
-		compras = new ArrayList<Compra>();
 		utilizadores = new ArrayList<Utilizador>();
-	}
-
-	public void adicionaCompra(Compra aCompra) {
-		compras.add(aCompra);
 	}
 
 	public void adicionaUtilizador(Utilizador aUtilizador) {
@@ -40,10 +34,6 @@ public class AppStore {
 		return aplicacoes;
 	}
 
-	public List<Compra> getCompras() {
-		return compras;
-	}
-
 	public String getNome() {
 		return nome;
 	}
@@ -54,10 +44,6 @@ public class AppStore {
 
 	public void setAplicacoes(List<Aplicacao> aAplicacoes) {
 		aplicacoes = aAplicacoes;
-	}
-
-	public void setCompras(List<Compra> aCompras) {
-		compras = aCompras;
 	}
 
 	public void setUtilizadores(List<Utilizador> aUtilizadores) {

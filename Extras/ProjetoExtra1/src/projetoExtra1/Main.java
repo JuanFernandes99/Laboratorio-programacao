@@ -25,7 +25,7 @@ public class Main {
 		playStore.adicionaUtilizador(programador2);
 		playStore.adicionaApp(fruitNinja);
 		playStore.adicionaApp(clashOfClans);
-		playStore.adicionaCompra(compra1);
+		cliente1.adicionaCompra(compra1);
 		Avaliacao avaliacao1 = new Avaliacao(cliente1.getId(), 5, "bom jogo");
 		Avaliacao avaliacao2 = new Avaliacao(cliente1.getId(), 2, "bom jogo");
 		Avaliacao avaliacao3 = new Avaliacao(cliente1.getId(), 4, "bom jogo");
