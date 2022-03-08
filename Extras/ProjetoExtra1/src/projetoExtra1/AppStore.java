@@ -1,21 +1,30 @@
 package projetoExtra1;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import utilizador.Utilizador;
 
 public class AppStore {
 	private String nome;
+	private double lucro;
 	private List<Aplicacao> aplicacoes;
 	private List<Utilizador> utilizadores;
+	private List<Compra> compras;
 
 	public AppStore(String nome) {
+		lucro = 0;
 		aplicacoes = new ArrayList<Aplicacao>();
 		utilizadores = new ArrayList<Utilizador>();
+		compras = new ArrayList<Compra>();
 	}
 
 	public void adicionaUtilizador(Utilizador aUtilizador) {
 		utilizadores.add(aUtilizador);
+	}
+
+	public void adicionarCompra(Compra aCompra) {
+		compras.add(aCompra);
 	}
 
 	public void adicionaApp(Aplicacao aAplicacoes) { // b-) Incluir novas aplicações com a informação necessária.
@@ -30,6 +39,23 @@ public class AppStore {
 		return aplicacoes.stream().filter(aplicacao -> aplicacao.getAvaliacaoGeral() >= classificacaoMinima).toList();
 	}
 
+	public List<Aplicacao> listarPorNome() {
+
+		aplicacoes.sort(Comparator.comparing(Aplicacao::getNomeApp));
+		return aplicacoes;
+	}
+
+	public List<Aplicacao> listarPorVendas() {
+
+		aplicacoes.sort(Comparator.comparing(Aplicacao::getNumVendas));
+		return aplicacoes;
+	}
+
+	public List<Aplicacao> listarPorClassificacao() {
+		aplicacoes.sort(Comparator.comparing(Aplicacao::getAvaliacaoGeral).reversed());
+		return aplicacoes;
+	}
+
 	public List<Aplicacao> getAplicacoes() {
 		return aplicacoes;
 	}
@@ -40,6 +66,13 @@ public class AppStore {
 
 	public List<Utilizador> getUtilizadores() {
 		return utilizadores;
+	}
+
+	public double getLucro() {
+		for (Compra compra : compras) {
+			lucro += compra.getValor();
+		}
+		return lucro;
 	}
 
 	public void setAplicacoes(List<Aplicacao> aAplicacoes) {
@@ -54,8 +87,4 @@ public class AppStore {
 		nome = aNome;
 	}
 
-	@Override
-	public String toString() {
-		return "AppStore [aplicacoes=" + aplicacoes + "$]";
-	}
 }

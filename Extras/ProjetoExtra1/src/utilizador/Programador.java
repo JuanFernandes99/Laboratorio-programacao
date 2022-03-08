@@ -7,10 +7,12 @@ import projetoExtra1.TipoAplicacao;
 
 public class Programador extends Utilizador {
 	private double avaliacaoGeral;
+	private double lucro;
 	private List<Aplicacao> aplicacoes; // atençao ao apagar as listas
 
 	public Programador(String aNome, int aIdade) {
 		super(aNome, aIdade);
+		lucro = 0;
 		aplicacoes = new ArrayList<Aplicacao>();
 		avaliacaoGeral = 0;
 	}
@@ -29,6 +31,13 @@ public class Programador extends Utilizador {
 
 	public double getAvaliacaoGeral() {
 		return avaliacaoGeral;
+	}
+
+	public double getLucro() {
+		for (Aplicacao aplicacao : aplicacoes) {
+			lucro += aplicacao.getNumVendas() * aplicacao.getPreco();
+		}
+		return lucro;
 	}
 
 	public void setAplicacoes(List<Aplicacao> aAplicacoes) {

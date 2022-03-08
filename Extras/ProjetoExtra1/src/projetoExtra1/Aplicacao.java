@@ -28,11 +28,12 @@ public class Aplicacao {
 		}
 		avaliacaoGeral = sum / avaliacoes.size();
 	}
-	
-    public void adicionarVenda() {
-        setNumVendas(getNumVendas() + 1);
-    }
-    
+
+	public void adicionarVenda() {
+		numVendas++;
+	}
+
+	// Getters e Setters
 	public String getNomeApp() {
 		return nomeApp;
 	}
@@ -41,32 +42,12 @@ public class Aplicacao {
 		return preco;
 	}
 
-	/*
-	 * public double getAvaliacao() { return avaliacao; }
-	 */
 	public TipoAplicacao getTipo() {
 		return tipo;
 	}
 
-	public void setNomeApp(String aNomeApp) {
-		nomeApp = aNomeApp;
-	}
-
-	public void setPreco(double aPreco) {
-		preco = aPreco;
-	}
-
-	/*
-	 * public void setAvaliacao(double aAvaliacao) { avaliacao = aAvaliacao; }
-	 */
-	public void setTipo(TipoAplicacao aTipo) {
-		tipo = aTipo;
-	}
-
-	@Override
-	public String toString() {
-		return "Aplicacao [nomeApp=" + nomeApp + ", preco=" + preco + ", avaliacaoGeral=" + avaliacaoGeral + ", tipo="
-				+ tipo + "]";
+	public int getNumVendas() {
+		return numVendas;
 	}
 
 	public List<Avaliacao> getAvaliacoes() {
@@ -77,16 +58,30 @@ public class Aplicacao {
 		return avaliacaoGeral;
 	}
 
+	public void setNomeApp(String aNomeApp) {
+		nomeApp = aNomeApp;
+	}
+
+	public void setPreco(double aPreco) {
+		preco = aPreco;
+	}
+
+	public void setTipo(TipoAplicacao aTipo) {
+		tipo = aTipo;
+	}
+
 	public void setAvaliacaoGeral(double avaliacaoGeral) {
 		this.avaliacaoGeral = avaliacaoGeral;
 	}
 
-	public int getNumVendas() {
-		return numVendas;
-	}
-
 	public void setNumVendas(int numVendas) {
 		this.numVendas = numVendas;
+	}
+
+	@Override
+	public String toString() {
+		return "\nnomeApp=" + nomeApp + ", preco=" + preco + ", avaliacaoGeral=" + avaliacaoGeral + ", tipo=" + tipo
+				+ "";
 	}
 
 }
