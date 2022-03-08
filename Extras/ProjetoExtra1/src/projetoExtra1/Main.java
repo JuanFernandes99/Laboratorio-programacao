@@ -1,46 +1,82 @@
 package projetoExtra1;
 
 import java.util.Arrays;
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
 import utilizador.Cliente;
 import utilizador.Programador;
 
 public class Main {
+	static Scanner sc = new Scanner(System.in);
+	static AppStore playStore = new AppStore("PlayStore");
+	static Programador programador1 = new Programador("Juan", 22);
+	static Programador programador2 = new Programador("Ligia", 22);
+	static Aplicacao fruitNinja = programador1.desenvolverAplicacao("Fruit Ninja", 50, TipoAplicacao.Games);
+	static Aplicacao clashOfClans = programador2.desenvolverAplicacao("Clash of clans", 70, TipoAplicacao.Games);
+	static Aplicacao callOfDuty = programador1.desenvolverAplicacao("Call Of Duty", 60, TipoAplicacao.Games);
 
 	public static void main(String[] args) {
+		playStore.adicionaApp(fruitNinja);
+		playStore.adicionaApp(clashOfClans);
 		
-		// Registar novos utilizadores.
-		Programador programador1 = new Programador("Juan", 22);
-		Programador programador2 = new Programador("Ligia", 22);
-		Cliente cliente1 = new Cliente("Jessica", 25, 500);
-		Cliente cliente2 = new Cliente("Ligia", 25 , 800);
+		// atribuir ao programador apps
+		programador2.atribuirApp(fruitNinja);
+		programador1.atribuirApp(clashOfClans);
+		programador1.atribuirApp(callOfDuty);
+		
+		
+		System.out.println("Bem-vindo à appStore!");
+		while (true) {
+			menu();
+			try {
+				int opcao = sc.nextInt();
+				sc.nextLine();
+				switch (opcao) {
 
-		// Criar AppStore
-		AppStore playStore = new AppStore("PlayStore");
+				case 1:
+				playStore.registarCliente();
+				System.out.println(playStore.getUtilizadores());
+					break;
+				case 2:
+					System.out.println(playStore.getAplicacoes());
+					break;
 
-		// Criar Aplicaçoes
-		Aplicacao fruitNinja = programador1.desenvolverAplicacao("Fruit Ninja", 50, TipoAplicacao.Games);
-		Aplicacao clashOfClans = programador2.desenvolverAplicacao("Clash of clans", 70, TipoAplicacao.Games);
-		Aplicacao callOfDuty = programador1.desenvolverAplicacao("Call Of Duty", 60, TipoAplicacao.Games);
+				case 3:
+					System.out.println(playStore.getAplicacoes());
+					break;
+
+				case 4:
+					//System.out.println("Esfregadelas Acumuladas: " + Lampada.getEsfregadelasAcumuladas());
+					break;
+
+				case 5:
+				//	System.out.println("Vezes recarregada: " + Lampada.getVezesRecarregada());
+					break;
+
+				default:
+					System.out.println("Só são permitidos números entre 1 a 5 , tente de novo.");
+				}
+			} catch (InputMismatchException e) {
+				System.out.println(
+						"Erro fatal (448): Digite um número inteiro de 1 até 2147483647. Os caracteres também não são permitidos. Tente novamente :)");
+				sc.nextLine(); // Limpar consola
+			}
+		}
+		/*
 
 		// Criar Compra
 
 		Compra compra1 = new Compra(cliente1, Arrays.asList(fruitNinja, clashOfClans));
 		Compra compra2 = new Compra(cliente2, Arrays.asList(fruitNinja));
 
-		// atribuir ao programador apps
-		programador2.atribuirApp(fruitNinja);
-		programador1.atribuirApp(clashOfClans);
-		programador1.atribuirApp(callOfDuty);
+
 		
 		// adicionar utilizadores a playStore
 		playStore.adicionaUtilizador(cliente1);
 		playStore.adicionaUtilizador(cliente2);
 		playStore.adicionaUtilizador(programador1);
 		playStore.adicionaUtilizador(programador2);
-
-		// adicionar apps a playStore
-		playStore.adicionaApp(fruitNinja);
-		playStore.adicionaApp(clashOfClans);
 
 		// compra do cliente
 		cliente1.adicionaCompra(compra1);
@@ -113,7 +149,7 @@ public class Main {
 		// Imprimir o valor total que cada programador recebeu do conjunto das suas apps
 		linha();
 		titulo("Valor total que cada programador recebeu do conjunto das suas apps: " + programador1.getLucro() + "€");
-
+*/
 	}
 
 	public static void linha() {
@@ -124,4 +160,14 @@ public class Main {
 	public static void titulo(String titulo) {
 		System.out.println(titulo);
 	}
+	
+	public static void menu() {
+		System.out.println("\nEscolha uma das opções disponíveis:");
+		System.out.println("1 - Criar Conta");
+		System.out.println("2 - Apps Disponiveis");
+		System.out.println("3 - Comprar App");
+		System.out.println("4 - Quantidade de Esfregadelas");
+		System.out.println("5 - Quantidade de Recarregamentos");
+	}
 }
+

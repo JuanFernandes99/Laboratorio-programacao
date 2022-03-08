@@ -26,7 +26,16 @@ public class AppStore {
 	public void adicionarCompra(Compra aCompra) {
 		compras.add(aCompra);
 	}
-
+	public  void registarCliente() {
+		System.out.println("\nDigite o nome:");
+		String aNome = Main.sc.nextLine();
+		System.out.println("\nDigite a sua idade:");
+		int aIdade = Main.sc.nextInt();
+		System.out.println("\nDigite o seu saldo:"); //?
+		double aSaldo = Main.sc.nextInt();
+		Utilizador cliente = new Cliente(aNome, aIdade, aSaldo);
+		utilizadores.add(cliente);
+	}
 	public void adicionaApp(Aplicacao aAplicacoes) { // b-) Incluir novas aplicações com a informação necessária.
 		aplicacoes.add(aAplicacoes);
 	}
