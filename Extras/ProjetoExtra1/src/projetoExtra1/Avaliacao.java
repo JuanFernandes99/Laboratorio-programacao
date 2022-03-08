@@ -12,7 +12,7 @@ public class Avaliacao {
 		classificacao = aClassificacao;
 		comentario = aComentario;
 	}
-//anonimo e sem comentario
+	//anonimo e sem comentario
 	public Avaliacao(float aClassificacao) {
 		classificacao = aClassificacao;
 	}
@@ -26,15 +26,14 @@ public class Avaliacao {
 		return comentario;
 	}
 
+	public int getClienteId() {
+		return clienteId;
+	}
+	
 	@Override
 	public String toString() {
 		return "Avaliacao [classificacao=" + classificacao + ", comentario=" + comentario + ", clienteId=" + clienteId
 				+ "]";
-	}
-
-
-	public int getClienteId() {
-		return clienteId;
 	}
 
 }
