@@ -21,9 +21,9 @@ public class Programador extends Utilizador {
 		aplicacoes.add(aAplicacao);
 	}
 
-	public Aplicacao desenvolverAplicacao(String aNome, double aPreco, TipoAplicacao aTipo) {
+/*	public Aplicacao desenvolverAplicacao(String aNome, double aPreco, TipoAplicacao aTipo) {
 		return new Aplicacao(aNome, aPreco, aTipo);
-	}
+	}*/
 
 	public List<Aplicacao> getAplicacoes() {
 		return aplicacoes;

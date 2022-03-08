@@ -3,6 +3,9 @@ package projetoExtra1;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+
+import utilizador.Cliente;
+import utilizador.Programador;
 import utilizador.Utilizador;
 
 public class AppStore {
@@ -19,26 +22,37 @@ public class AppStore {
 		compras = new ArrayList<Compra>();
 	}
 
-	public void adicionaUtilizador(Utilizador aUtilizador) {
-		utilizadores.add(aUtilizador);
-	}
-
 	public void adicionarCompra(Compra aCompra) {
 		compras.add(aCompra);
-	}
-	public  void registarCliente() {
-		System.out.println("\nDigite o nome:");
-		String aNome = Main.sc.nextLine();
-		System.out.println("\nDigite a sua idade:");
-		int aIdade = Main.sc.nextInt();
-		System.out.println("\nDigite o seu saldo:"); //?
-		double aSaldo = Main.sc.nextInt();
-		Utilizador cliente = new Cliente(aNome, aIdade, aSaldo);
-		utilizadores.add(cliente);
 	}
 	public void adicionaApp(Aplicacao aAplicacoes) { // b-) Incluir novas aplicações com a informação necessária.
 		aplicacoes.add(aAplicacoes);
 	}
+	
+	public  void registarUtilizador() {
+		System.out.println("\nDigite o nome:");
+		String aNome = Main.sc.nextLine();
+		System.out.println("\nDigite a sua idade:");
+		int aIdade = Main.sc.nextInt();
+		Main.sc.nextLine();
+		System.out.println("Indique o tipo de utilizador: Cliente(1) ou Programador(2) ?");
+		int utilizador = Main.sc.nextInt();
+		if ((utilizador == 1)) {
+			System.out.println("\nDigite o seu saldo:"); //?
+			double aSaldo = Main.sc.nextInt();
+			Utilizador cliente = new Cliente(aNome, aIdade, aSaldo);
+			utilizadores.add(cliente);
+			System.out.println(cliente.getNome() + "cliente criado com sucesso"); 
+		}
+		else if(utilizador == 2) {
+		
+			Utilizador programador = new Programador(aNome, aIdade);
+			utilizadores.add(programador);
+			System.out.println(programador.getNome() + "programador criado com sucesso"); 
+		}
+
+	}
+
 
 	public List<Aplicacao> getAplicacoesPorCategoria(TipoAplicacao tipo) {
 		return aplicacoes.stream().filter(aplicacao -> aplicacao.getTipo() == tipo).toList();
