@@ -1,28 +1,40 @@
 package projetoExtra1;
 
-import java.util.List;
-
-import utilizador.Programador;
 
 public class Avaliacao {
+	private float classificacao;
+	private String comentario;
+	private int clienteId; // ver isto
 
-	private List<Aplicacao> aplicacoes;
-	private List<Programador> programadores;
-
-	public List<Aplicacao> getAplicacoes() {
-		return aplicacoes;
+	// dois construtores porque pode ser anonimo
+	public Avaliacao(int aClienteId, float aClassificacao, String aComentario) {
+		clienteId = aClienteId;
+		classificacao = aClassificacao;
+		comentario = aComentario;
+	}
+//anonimo e sem comentario
+	public Avaliacao(float aClassificacao) {
+		classificacao = aClassificacao;
 	}
 
-	public List<Programador> getProgramadores() {
-		return programadores;
+	// getters and setter
+	public float getClassificacao() {
+		return classificacao;
 	}
 
-	public void setAplicacoes(List<Aplicacao> aAplicacoes) {
-		aplicacoes = aAplicacoes;
+	public String getComentario() {
+		return comentario;
 	}
 
-	public void setProgramadores(List<Programador> aProgramadores) {
-		programadores = aProgramadores;
+	@Override
+	public String toString() {
+		return "Avaliacao [classificacao=" + classificacao + ", comentario=" + comentario + ", clienteId=" + clienteId
+				+ "]";
+	}
+
+
+	public int getClienteId() {
+		return clienteId;
 	}
 
 }

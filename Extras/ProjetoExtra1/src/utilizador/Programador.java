@@ -6,16 +6,21 @@ import projetoExtra1.Aplicacao;
 import projetoExtra1.TipoAplicacao;
 
 public class Programador extends Utilizador {
-	private double avaliacao;
+	private double avaliacaoGeral;
 	private List<Aplicacao> aplicacoes;  // atençao ao apagar as listas 
 
 
 	public Programador(String aNome, int aIdade) {
 		super(aNome, aIdade);
 		aplicacoes = new ArrayList<Aplicacao>();
-		avaliacao = 0;
+		avaliacaoGeral = 0;
 	}
 
+
+	public void atribuirApp(Aplicacao aAplicacao) {
+		aplicacoes.add(aAplicacao);
+	}
+	
 	public Aplicacao desenvolverAplicacao(String aNome, double aPreco, TipoAplicacao aTipo) {
 		return new Aplicacao(aNome, aPreco, aTipo);
 	}
@@ -28,12 +33,14 @@ public class Programador extends Utilizador {
 		aplicacoes = aAplicacoes;
 	}
 
-	public double getAvaliacao() {
-		return avaliacao;
+
+
+	public double getAvaliacaoGeral() {
+		return avaliacaoGeral;
 	}
 
-	public void setAvaliacao(double aAvaliacao) {
-		avaliacao = aAvaliacao;
+	public void setAvaliacaoGeral(double avaliacaoGeral) {
+		this.avaliacaoGeral = avaliacaoGeral;
 	}
 
 }

@@ -6,11 +6,11 @@ public abstract class Utilizador {
 	protected String nome;
 	protected int idade;
 	protected int id;
-	
+
 	public Utilizador(String aNome, int aIdade) {
 		nome = aNome;
 		idade = aIdade;
-		id = utilizadorCounter;
+		id = utilizadorCounter; // Registar novos utilizadores e atribuir automaticamente números únicos.
 		utilizadorCounter++;
 	}
 
@@ -39,8 +39,11 @@ public abstract class Utilizador {
 	}
 
 	@Override
-	public String toString() {
-		return "Utilizador: [Nome=" + nome + ", Idade=" + idade + ", Tipo="+ getClass().getSimpleName()+ ", Id=" + id + "]";
+	public String toString() { // Listar todos os utilizadores da App Store. Para cada utilizador é mostrado o
+								// nome, idade, e número de utilizador.
+		
+		return "Utilizador: [Nome=" + nome + ", Idade=" + idade + ", Tipo=" + getClass().getSimpleName() + ", Id=" + id
+				+ "]";
 	}
-	
+
 }
