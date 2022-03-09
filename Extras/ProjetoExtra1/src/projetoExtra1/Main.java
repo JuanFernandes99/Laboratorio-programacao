@@ -10,8 +10,7 @@ import utilizador.Programador;
 public class Main {
 	static Scanner sc = new Scanner(System.in);
 	public static void main(String[] args) {
-		//playStore.adicionaApp(fruitNinja);
-	//	playStore.adicionaApp(clashOfClans);
+
 
 		// atribuir ao programador apps
 		//programador2.atribuirApp(fruitNinja);
@@ -28,23 +27,30 @@ public class Main {
 
 				case 1:
 					MenuJogo.registarUtilizador();
-				//	System.out.println(playStore.getUtilizadores());
 					break;
+					
 				case 2:
+					
+					MenuJogo.
 				//	System.out.println(playStore.getAplicacoes());
+					
 					break;
 
 				case 3:
 				//	System.out.println(playStore.getAplicacoes());
+					
 					break;
 
 				case 4:
 					// System.out.println("Esfregadelas Acumuladas: " +
 					// Lampada.getEsfregadelasAcumuladas());
+					
 					break;
 
 				case 5:
+					
 					// System.out.println("Vezes recarregada: " + Lampada.getVezesRecarregada());
+					
 					break;
 
 				default:

@@ -13,7 +13,7 @@ public class MenuJogo {
 	public static void menu() {
 		System.out.println("\nEscolha uma das opções disponíveis:");
 		System.out.println("1 - Registar Utilizador");
-		System.out.println("2 - Registar aplicaçao");
+		System.out.println("2 - Adicionar aplicaçao");
 		System.out.println("3 - Comprar App");
 		System.out.println("4 - Quantidade de Esfregadelas");
 		System.out.println("5 - Quantidade de Recarregamentos");
@@ -40,5 +40,8 @@ public class MenuJogo {
 			System.out.println(programador.getNome() + "programador criado com sucesso");
 		}
 
+	}
+	public static void adicionarApp(Aplicacao aNome) {
+		playStore.adicionaApp(aNome);
 	}
 }
