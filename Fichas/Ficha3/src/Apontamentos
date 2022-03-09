@@ -1,0 +1,21 @@
+
+classe: banco
+metodo: public void removeCasa(String aMorada) 
+
+	/* java.util.ConcurrentModificationException : exceção porque estou modificando a lista durante a iteração.
+	melhor usar o for normal para quando temos que interagir com a lista exemplo: .remove
+	
+		for (Casa casa : casas) {
+            
+                casas.remove(casa);
+            }
+        }
+*/
+
+classe: Main
+
+//ContaBancaria conta1 = new ContaBancaria("Juan", new Date());  
+		//ContaBancaria conta2 = new ContaBancaria("pedro", 250);  // para perceber melhor fazer da maneira seguinte
+		
+		banco1.criaConta(new ContaBancaria("Juan", new Date()));
+		banco1.criaConta(new ContaBancaria("pedro", 250));
