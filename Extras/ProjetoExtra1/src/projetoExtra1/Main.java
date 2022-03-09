@@ -9,48 +9,48 @@ import utilizador.Programador;
 
 public class Main {
 	static Scanner sc = new Scanner(System.in);
+
 	public static void main(String[] args) {
 
-
+		MenuStore menu = new MenuStore();
 		// atribuir ao programador apps
-		//programador2.atribuirApp(fruitNinja);
-		//programador1.atribuirApp(clashOfClans);
-		//programador1.atribuirApp(callOfDuty);
+		// programador2.atribuirApp(fruitNinja);
+		// programador1.atribuirApp(clashOfClans);
+		// programador1.atribuirApp(callOfDuty);
 
 		System.out.println("Bem-vindo à appStore!");
 		while (true) {
-			MenuJogo.menu();
+			menu.menu();
 			try {
 				int opcao = sc.nextInt();
 				sc.nextLine();
 				switch (opcao) {
 
 				case 1:
-					MenuJogo.registarUtilizador();
+					menu.registarUtilizador();
 					break;
-					
+
 				case 2:
-					
-					MenuJogo.
-				//	System.out.println(playStore.getAplicacoes());
-					
+menu.adicionarApp();
+					// System.out.println(playStore.getAplicacoes());
+
 					break;
 
 				case 3:
-				//	System.out.println(playStore.getAplicacoes());
-					
+					// System.out.println(playStore.getAplicacoes());
+
 					break;
 
 				case 4:
 					// System.out.println("Esfregadelas Acumuladas: " +
 					// Lampada.getEsfregadelasAcumuladas());
-					
+
 					break;
 
 				case 5:
-					
+
 					// System.out.println("Vezes recarregada: " + Lampada.getVezesRecarregada());
-					
+
 					break;
 
 				default:
@@ -155,6 +155,5 @@ public class Main {
 	public static void titulo(String titulo) {
 		System.out.println(titulo);
 	}
-
 
 }
