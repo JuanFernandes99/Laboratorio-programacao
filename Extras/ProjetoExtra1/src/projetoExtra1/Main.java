@@ -9,11 +9,6 @@ import utilizador.Programador;
 
 public class Main {
 	static Scanner sc = new Scanner(System.in);
-	static AppStore playStore = new AppStore("PlayStore");
-	static Aplicacao fruitNinja = new Aplicacao("Fruit Ninja", 50, TipoAplicacao.Games);
-	static Aplicacao clashOfClans = new Aplicacao("Clash of clans", 70, TipoAplicacao.Games);
-	static Aplicacao callOfDuty = new Aplicacao("Call Of Duty", 60, TipoAplicacao.Games);
-
 	public static void main(String[] args) {
 		//playStore.adicionaApp(fruitNinja);
 	//	playStore.adicionaApp(clashOfClans);
@@ -25,22 +20,22 @@ public class Main {
 
 		System.out.println("Bem-vindo à appStore!");
 		while (true) {
-			menu();
+			MenuJogo.menu();
 			try {
 				int opcao = sc.nextInt();
 				sc.nextLine();
 				switch (opcao) {
 
 				case 1:
-					playStore.registarUtilizador();
-					System.out.println(playStore.getUtilizadores());
+					MenuJogo.registarUtilizador();
+				//	System.out.println(playStore.getUtilizadores());
 					break;
 				case 2:
-					System.out.println(playStore.getAplicacoes());
+				//	System.out.println(playStore.getAplicacoes());
 					break;
 
 				case 3:
-					System.out.println(playStore.getAplicacoes());
+				//	System.out.println(playStore.getAplicacoes());
 					break;
 
 				case 4:
@@ -155,12 +150,5 @@ public class Main {
 		System.out.println(titulo);
 	}
 
-	public static void menu() {
-		System.out.println("\nEscolha uma das opções disponíveis:");
-		System.out.println("1 - Registar Utilizador");
-		System.out.println("2 - Registar aplicaçao");
-		System.out.println("3 - Comprar App");
-		System.out.println("4 - Quantidade de Esfregadelas");
-		System.out.println("5 - Quantidade de Recarregamentos");
-	}
+
 }
