@@ -20,6 +20,22 @@ public class Aplicacao {
 		avaliacoes = new ArrayList<Avaliacao>();
 	}
 
+	public static TipoAplicacao tipoEnum() {
+		System.out.println("\nDigite o tipo da App:");
+		String aTipo = Main.sc.nextLine();
+		
+		TipoAplicacao tipoEnum = TipoAplicacao.valueOf(aTipo.toUpperCase());
+		if (tipoEnum != null) {
+			return tipoEnum;
+		}
+
+		else {
+			System.out.println("A categoria que indicou não existe, tente de novo, "
+					+ "escolhendo de entre as categorias anteriormente referidas!");
+			return tipoEnum();
+		}
+	}
+
 	public void adicionaAvaliacao(Avaliacao aAvaliacao) { // esta mal soma todas as avaliaçoes
 		avaliacoes.add(aAvaliacao);
 		double sum = 0;

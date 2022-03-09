@@ -31,13 +31,12 @@ public class Main {
 					break;
 
 				case 2:
-menu.adicionarApp();
-					// System.out.println(playStore.getAplicacoes());
+					menu.adicionarApp();
 
 					break;
 
 				case 3:
-					// System.out.println(playStore.getAplicacoes());
+					menu.listarUtilizador();
 
 					break;
 

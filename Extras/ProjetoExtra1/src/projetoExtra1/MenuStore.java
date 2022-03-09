@@ -6,9 +6,6 @@ import utilizador.Utilizador;
 
 public class MenuStore {
 	private AppStore playStore = new AppStore("PlayStore");
-	private Aplicacao fruitNinja = new Aplicacao("Fruit Ninja", 50, TipoAplicacao.Games);
-	private Aplicacao clashOfClans = new Aplicacao("Clash of clans", 70, TipoAplicacao.Games);
-	private Aplicacao callOfDuty = new Aplicacao("Call Of Duty", 60, TipoAplicacao.Games);
 
 	public void menu() {
 		System.out.println("\nEscolha uma das opções disponíveis:");
@@ -32,14 +29,19 @@ public class MenuStore {
 			double aSaldo = Main.sc.nextInt();
 			Utilizador cliente = new Cliente(aNome, aIdade, aSaldo);
 			playStore.adicionarUtilizador(cliente);
-			System.out.println(cliente.getNome() + "cliente criado com sucesso");
+			System.out.println("Nome: " + cliente.getNome() + ", cliente criado com sucesso");
 		} else if (utilizador == 2) {
 
 			Utilizador programador = new Programador(aNome, aIdade);
 			playStore.adicionarUtilizador(programador);
-			System.out.println(programador.getNome() + "programador criado com sucesso");
+			System.out.println("Nome: " + programador.getNome() + ", programador criado com sucesso");
 		}
 
+	}
+
+	public void listarUtilizador() {
+
+		System.out.println(playStore.getUtilizadores());
 	}
 
 	public void adicionarApp() {
@@ -47,10 +49,9 @@ public class MenuStore {
 		String aNome = Main.sc.nextLine();
 		System.out.println("\nDigite o preço da App:");
 		double aPreco = Main.sc.nextDouble();
-		System.out.println("\nDigite o tipo da App:");
-		String tipo = Main.sc.nextLine();
-		TipoAplicacao tipoEnum = tipo;
-		Aplicacao aplicacao = new Aplicacao(aNome, aPreco,tipoEnum.tipo);
-
+		Main.sc.nextLine();
+		TipoAplicacao tipoEnum = TipoAplicacao.menuTipo();
+		Aplicacao aplicacao = new Aplicacao(aNome, aPreco, tipoEnum);
+		playStore.adicionaApp(aplicacao);
 	}
 }

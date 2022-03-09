@@ -38,12 +38,13 @@ public abstract class Utilizador {
 		id = aId;
 	}
 
+	
+	
 	@Override
 	public String toString() { // Listar todos os utilizadores da App Store. Para cada utilizador é mostrado o
 								// nome, idade, e número de utilizador.
 		
-		return "Utilizador: [Nome=" + nome + ", Idade=" + idade + ", Tipo=" + getClass().getSimpleName() + ", Id=" + id
-				+ "]";
+		return "Nome=" + nome + ", Idade=" + idade + ", Tipo=" + getClass().getSimpleName() + ", Id=" + id;
 	}
 
 }
