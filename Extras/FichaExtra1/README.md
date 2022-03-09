@@ -1,30 +1,18 @@
 # Laboratorio_de_programacao
 
-## Resumo Ficha de exercícios 6
+## Resumo Ficha de exercícios extra 1
 
 ### Ex. 1:
-Considerando o seguinte problema focado numa livraria.
-
-O funcionário de uma biblioteca pode fazer uma venda, caso o livro não faça parte do stock então o funcionário poderá encomendar o livro. O gestor da livraria é responsável por preparar a faturação mensalmente, este profissional poderá também encomendar livros de acordo com a necessidade da livraria. A livraria também contrata ocasionalmente estagiários, esta contratação é efetuada pelo gestor, que obviamente conta com a colaboração do gestor. Os estagiários têm funções muito limitadas, a sua tarefa dentro da biblioteca é sobretudo a atualização de stock (o stock é também atualizado automaticamente aquando de uma encomenda). O contabilista da empresa efetua a faturação mensalmente, que é obrigatoriamente encaminhada à ATA.
-
-  **1-)** Identificar os atores, casos de utilização e modelar o Diagrama de Casos de utilização do problema acima definido.                                                                
-  **2-)** Identificar os casos de utilização .    
-  
-  **3-)** Modelar o Diagrama de Casos de utilização do problema acima definido. 
-  
-  **Resolução:**
-  
-   ![Ficha 6 - casos de utilizacao](https://user-images.githubusercontent.com/97111394/157500519-a49fc5ff-f238-40c3-9184-12644dcec569.jpeg)
-
+Considere  que  se  pretende  desenvolver  uma  aplicação  para  registo  de  navios  num porto marítimo.   Um   navio   é   genericamente   caracterizado   pela   seguinte   informação: Identificadordo Navio (String), nome (String), ano de construção (Date)e comprimento (float). Um  navio porta-contentoresé  um  navio  com  atributo  adicional,  onúmeromáximo  de contentores (int). Um navio petroleiro é um navio com atributo adicional capacidade de carga (float),  em  toneladas.  Codifique  as  classes  Navio,  PortaContentores  e  Petroleiro,  que representam  respetivamente  um  navio  qualquer,  um  navio porta-contentorese  um  navio petroleiro, incluindo construtores, métodos de acesso (getters) e mutação (setters).
 
 ### Ex. 2: 
-Considerando o seguinte problema focado numa universidade:
 
-Numa universidade existem salas de aula, escritórios e departamentos. Uma universidade é constituída por vários departamentos, que por sua vez é constituído por vários escritórios e várias salas de aula. Um departamento é constituído adicionalmente por vários professores, que podem ser professores catedráticos, professores associados e professores assistentes. Um professor tem associado um escritório e um escritório pode ter mais do que um professor. A universidade possuí vários cursos, e cada curso possui vários estudantes.
+Implemente  uma  classe  Porto  (apenas  os  atributos  e  construtor)  para  armazenar  a informação  sobre  a  atracagem  de  navios  (use  o  tipo  de  coleção  que  considerar  mais apropriado).  A  classe  deve  incluir  métodos  para  (nota:  pode  adicionar  métodos  às  classes anteriores se necessário):
  
-   **1-)** Identificar as classes e as suas relações.                                   
-   **2-)** Criar um diagrama de classes para o problema acima definido.                                       
-   
-   **Resolução:**
-   
-   ![Ficha 6 - diagrama de classes ](https://user-images.githubusercontent.com/97111394/157500554-61c1cb7a-4a63-42d8-b1b1-6f50173ee283.jpeg)
+   **1-)** Adicionar um novo navio sem permitir a duplicação da Identificador do Navio.                                   
+   **2-)** Devolver a quantidade máxima total de contentores de todos os navios porta-contentoresatracados no porto.
+   **3-)** Devolver a capacidade total de carga de todos os navios porta-contentorese petroleiros atracados no porto, sabendo que um contentor tem capacidade para 10 toneladas;
+
+### Ex. 3: 
+
+Escreva as instruções necessárias, no método main(...), para criar um Porto com um navio petroleiro e um navio porta contentores (utilize qualquer valor para os parâmetros com um tipo de dados válido). Utilize o método para adicionarum novo navio. Valide que não é possível repetir a matrícula de navio, num mesmo porto.
