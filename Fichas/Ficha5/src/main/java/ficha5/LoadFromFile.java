@@ -24,7 +24,7 @@ public class LoadFromFile {
 
 		return ListaPessoa;
 	}
-
+	// ler ficheiro a partir dos resources
 	private InputStream getFileAsIOStream(String nomeFicheiro) {
 
 		InputStream inputStream = this.getClass().getClassLoader().getResourceAsStream(nomeFicheiro);
@@ -35,6 +35,8 @@ public class LoadFromFile {
 		return inputStream;
 	}
 
+	
+	//retorna o conteudo do ficheiro
 	private String getFileContent(InputStream is) {
 		String conteudoFicheiro = "";
 		try {
@@ -50,7 +52,7 @@ public class LoadFromFile {
 		}
 		return conteudoFicheiro;
 	}
-
+// converte a string em uma lista de pessoas
 	private ArrayList<Pessoa> convertStringToListPessoa(String texto) throws JSONException {
 		ArrayList<Pessoa> listaPessoasAux = new ArrayList<Pessoa>();
 		JSONArray jsonArray = new JSONArray(texto);
