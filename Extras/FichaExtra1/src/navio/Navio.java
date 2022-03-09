@@ -24,28 +24,14 @@ public abstract class Navio {
 		return nome;
 	}
 
-	public Date getAnoConstrucao() {
-		return anoConstrucao;
-	}
-
-	public float getComprimento() {
-		return comprimento;
-	}
-
 	public void setIdentificador(String aIdentificador) {
 		identificador = aIdentificador;
 	}
 
-	public void setNome(String aNome) {
-		nome = aNome;
-	}
 
-	public void setAnoConstrucao(Date aAnoConstrucao) {
-		anoConstrucao = aAnoConstrucao;
-	}
-
-	public void setComprimento(float aComprimento) {
-		comprimento = aComprimento;
+	@Override
+	public String toString() {
+		return "Navio [identificador=" + identificador + ", nome=" + nome + "]";
 	}
 
 }

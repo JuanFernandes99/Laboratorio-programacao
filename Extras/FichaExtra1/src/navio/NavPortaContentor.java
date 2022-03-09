@@ -8,15 +8,11 @@ public class NavPortaContentor extends Navio {
 	public NavPortaContentor(String aIdentificador, String aNome, Date aAnoConstrucao, float aComprimento,
 			int aMaxContentores) {
 		super(aIdentificador, aNome, aAnoConstrucao, aComprimento);
-
+		maxContentores = aMaxContentores;
 	}
 
 	public int getMaxContentores() {
 		return maxContentores;
-	}
-
-	public void setMaxContentores(int aMaxContentores) {
-		maxContentores = aMaxContentores;
 	}
 
 }

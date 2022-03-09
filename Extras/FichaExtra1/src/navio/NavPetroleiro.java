@@ -9,15 +9,11 @@ public class NavPetroleiro extends Navio {
 	public NavPetroleiro(String aIdentificador, String aNome, Date aAnoConstrucao, float aComprimento,
 			float aCapCarga) {
 		super(aIdentificador, aNome, aAnoConstrucao, aComprimento);
-
+		capCarga = aCapCarga;
 	}
 
 	public float getCapCarga() {
 		return capCarga;
-	}
-
-	public void setCapCarga(float aCapCarga) {
-		capCarga = aCapCarga;
 	}
 
 }
