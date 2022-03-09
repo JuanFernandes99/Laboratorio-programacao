@@ -4,7 +4,7 @@
 
 ### Ex. 1:
 
-Crie uma função chamada areaTriangque recebe dois argumentos (altura e base) e retornaa área do triangulo.
+Crie uma função chamada areaTriang que recebe dois argumentos (altura e base) e retornaa área do triangulo.
 
 ### Ex. 2:
 
@@ -32,4 +32,4 @@ Crie  uma  função chamada  numVogais que  recebe  uma  String  (frase)  e impr
 
 ### Ex. 8:
 
-Escreva uma função chamada convertSecondsque recebe um número (segundos) e imprimeo númerode minutos, horas, dias e meses (considere que um mês tem 30 dias).
+Escreva uma função chamada convertSeconds que recebe um número (segundos) e imprimeo númerode minutos, horas, dias e meses (considere que um mês tem 30 dias).
