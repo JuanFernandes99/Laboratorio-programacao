@@ -24,6 +24,11 @@ public abstract class Fruta {
 	public String getNome() {
 		return nome;
 	}
+	
+
+	public double getPrecoBase() {
+		return precoBase;
+	}
 
 	@Override
 	public String toString() {

@@ -80,15 +80,13 @@ public class ResolucaoFicha2 {
 	}
 
 	public static double areaTriang(double aAlturaTriang, double aBaseTriang) {
-		double areaTriangulo = (aAlturaTriang * aBaseTriang) / 2;
+		return (aAlturaTriang * aBaseTriang) / 2;
 
-		return areaTriangulo;
 	}
 
 	public static double areaRetang(double aAlturaRetang, double aComprimentoRetang) {
-		double areaRetang = aAlturaRetang * aComprimentoRetang;
+		return aAlturaRetang * aComprimentoRetang;
 
-		return areaRetang;
 	}
 
 	public static double areaCal(double aX, double aY, double aZ) {
@@ -162,22 +160,25 @@ public class ResolucaoFicha2 {
 
 	public static void convertSeconds(int aSegundos) {
 		System.out.println("Insira o numero de segundos: " + aSegundos);
-		int month = 0, day = 0, hour = 0, minute = 0, seconds = 0;
-		seconds = aSegundos % 60;
-		month = aSegundos / 2592000;
-		aSegundos %= 2592000;
-		day = aSegundos / 86400;
-		aSegundos %= 86400;
-		hour = aSegundos / 3600;
-		aSegundos %= 3600;
-		minute = aSegundos / 60;
-		aSegundos %= 60;
+		
+        //Dia = 60*60*24 = 86400
+        int days = aSegundos / 86400;
+        aSegundos = aSegundos % 86400;
 
-		System.out.println("Month: " + month + "\nDay: " + day + "\nHour: " + hour + "\nMinute: " + minute
-				+ "\nSeconds: " + seconds);
+        //Hour = 60*60 = 3600
+        int hours = aSegundos / 3600;
+        aSegundos = aSegundos % 3600;
+
+        //Min = 60
+        int minutes = aSegundos / 60;
+        aSegundos = aSegundos % 60;
+
+        //Segundos
+        int sec = aSegundos;
+
+		System.out.println("\nDay: " + days + "\nHour: " + hours + "\nMinute: " + minutes
+				+ "\nSeconds: " + sec);
 
 	}
 
-	}
-
-
+}

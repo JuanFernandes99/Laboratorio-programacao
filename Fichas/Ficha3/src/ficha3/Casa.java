@@ -8,10 +8,6 @@ public class Casa {
 
 	// construtor
 
-	// Construtor sem argumentos.
-	public Casa() {
-
-	}
 
 	// Construtor que recebe por parâmetro a morada da casa e cria uma casa com essa
 	// morada.
@@ -30,7 +26,7 @@ public class Casa {
 	// preço de custo).
 	public double getPercentMargemLucro() {
 
-		return getMargemLucro() / (precoVenda * 100);
+		return precoVenda/precoCusto;
 
 	}
 

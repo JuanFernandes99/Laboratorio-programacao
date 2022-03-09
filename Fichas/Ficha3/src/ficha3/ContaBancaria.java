@@ -33,12 +33,9 @@ public class ContaBancaria {
 	// a data de abertura da conta no formato DD/MM/YYYY.
 	public String getInformacaoConta() {
 		DecimalFormat df = new DecimalFormat("0.00"); // Feito para retornar o saldo com duas casas decimais
-		String saldoDecimal = df.format(saldo); // O saldo é formatado numa String para retornar o saldo com duas casas
-												// decimais
 		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy"); // Formatar a data para dd/MM/yyyy
-		String strDate = formatter.format(dataAbertura); // Formatar a data para dd/MM/yyyy
-
-		return "Titular: " + titular + "/ Saldo atual " + saldoDecimal + "€" + "/ Data Abertura: " + strDate;
+		return "Titular: " + titular + "/ Saldo atual " + df.format(saldo) + "€" + "/ Data Abertura: "
+				+ simpleDateFormat.format(dataAbertura);
 	}
 
 	// Recebe o valor a depositar na conta (double) e atualiza o respetivo saldo.
@@ -77,7 +74,7 @@ public class ContaBancaria {
 		return dataAbertura;
 	}
 
-	//Setter
+	// Setter
 	public void setSaldo(double aSaldo) {
 		saldo = aSaldo;
 	}

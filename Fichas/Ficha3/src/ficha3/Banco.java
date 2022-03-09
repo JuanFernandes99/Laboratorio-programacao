@@ -50,12 +50,12 @@ public class Banco {
 	// Função que recebe a morada de uma casa e remove essa casa da lista de casas
 	// do Banco.
 	public void removeCasa(String aMorada) {
-		for (int i = 0; i < casas.size(); i++) {
-			Casa casa = casas.get(i);
-			if (casa.getMorada().equals(aMorada)) {
-				casas.remove(casa);
-			}
-		}
+        for(Casa casaAux : casas){
+            if(casaAux.getMorada().equals(morada)){
+
+                casas.remove(casaAux);
+            }
+        }
 	}
 
 	// Retorna a margem de lucro previsto da venda de todas as casas.
