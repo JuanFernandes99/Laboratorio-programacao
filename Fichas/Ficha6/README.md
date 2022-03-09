@@ -12,8 +12,9 @@ O funcionário de uma biblioteca pode fazer uma venda, caso o livro não faça p
   
   **3-)** Modelar o Diagrama de Casos de utilização do problema acima definido. 
   
-  Resoluçao:
-  ![Ficha 6 - casos de utilizacao](https://user-images.githubusercontent.com/97111394/157500519-a49fc5ff-f238-40c3-9184-12644dcec569.jpeg)
+  **Resolução:**
+  
+   ![Ficha 6 - casos de utilizacao](https://user-images.githubusercontent.com/97111394/157500519-a49fc5ff-f238-40c3-9184-12644dcec569.jpeg)
 
 
 ### Ex. 2: 
@@ -24,5 +25,6 @@ Numa universidade existem salas de aula, escritórios e departamentos. Uma unive
    **1-)** Identificar as classes e as suas relações.                                   
    **2-)** Criar um diagrama de classes para o problema acima definido.                                       
    
-   Resoluçao:
-     ![Ficha 6 - diagrama de classes ](https://user-images.githubusercontent.com/97111394/157500554-61c1cb7a-4a63-42d8-b1b1-6f50173ee283.jpeg)
+   **Resolução:**
+   
+   ![Ficha 6 - diagrama de classes ](https://user-images.githubusercontent.com/97111394/157500554-61c1cb7a-4a63-42d8-b1b1-6f50173ee283.jpeg)
