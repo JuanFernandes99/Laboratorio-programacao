@@ -8,7 +8,9 @@ public class Casa {
 
 	// construtor
 
-
+	public Casa() {
+		
+	}
 	// Construtor que recebe por parâmetro a morada da casa e cria uma casa com essa
 	// morada.
 	public Casa(String aMorada) {

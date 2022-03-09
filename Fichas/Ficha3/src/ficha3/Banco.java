@@ -51,7 +51,7 @@ public class Banco {
 	// do Banco.
 	public void removeCasa(String aMorada) {
         for(Casa casaAux : casas){
-            if(casaAux.getMorada().equals(morada)){
+            if(casaAux.getMorada().equals(aMorada)){
 
                 casas.remove(casaAux);
             }

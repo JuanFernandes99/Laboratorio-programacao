@@ -35,7 +35,7 @@ public class ContaBancaria {
 		DecimalFormat df = new DecimalFormat("0.00"); // Feito para retornar o saldo com duas casas decimais
 		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy"); // Formatar a data para dd/MM/yyyy
 		return "Titular: " + titular + "/ Saldo atual " + df.format(saldo) + "€" + "/ Data Abertura: "
-				+ simpleDateFormat.format(dataAbertura);
+				+ formatter.format(dataAbertura);
 	}
 
 	// Recebe o valor a depositar na conta (double) e atualiza o respetivo saldo.
