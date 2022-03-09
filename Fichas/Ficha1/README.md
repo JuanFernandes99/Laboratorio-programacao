@@ -1,30 +1,55 @@
 # Laboratorio_de_programacao
 
-## Resumo Ficha de exercícios 6
+## Resumo Ficha de exercícios 1
 
-### Ex. 1:
-Considerando o seguinte problema focado numa livraria.
+**Em grupos de 2:**
 
-O funcionário de uma biblioteca pode fazer uma venda, caso o livro não faça parte do stock então o funcionário poderá encomendar o livro. O gestor da livraria é responsável por preparar a faturação mensalmente, este profissional poderá também encomendar livros de acordo com a necessidade da livraria. A livraria também contrata ocasionalmente estagiários, esta contratação é efetuada pelo gestor, que obviamente conta com a colaboração do gestor. Os estagiários têm funções muito limitadas, a sua tarefa dentro da biblioteca é sobretudo a atualização de stock (o stock é também atualizado automaticamente aquando de uma encomenda). O contabilista da empresa efetua a faturação mensalmente, que é obrigatoriamente encaminhada à ATA.
+Developer1: Crie  um  repositório  no GitHub.  Deve  adicionar  um  ficheiro  README  e  um ficheiro .gitgnore com o template Java.
 
-  **1-)** Identificar os atores, casos de utilização e modelar o Diagrama de Casos de utilização do problema acima definido.                                                                
-  **2-)** Identificar os casos de utilização .    
-  
-  **3-)** Modelar o Diagrama de Casos de utilização do problema acima definido. 
-  
-  **Resolução:**
-  
-   ![Ficha 6 - casos de utilizacao](https://user-images.githubusercontent.com/97111394/157500519-a49fc5ff-f238-40c3-9184-12644dcec569.jpeg)
+Developer  1:No  repositório  criado,  adicione  o  Developer  2.Para  issová  àsdefinições-> colaboradores->Adicionar pessoa.
+
+Developer2:Aceite o convite do developer 1.
+
+Developer 1: Faça clone do projeto com o gitDesktop para o ambiente de trabalho
+**Note que para alterar a localização do clone terá que mudar o “Local path” para a localização desejada**
+
+Developer  1:Crie  um novo  projeto  java  no repositório  que  acabou  de  clonar. O  seu repositório deverá ser semelhante à imagem abaixo.
+
+Developer 1:Na função main escreva o seguinte código. 
+
+public static void main(String[] args) {
+System.out.println("Hello World!"); // Display the string.}
+
+Developer 1:Faça commit e push das alterações para o github.
+
+Developer 2:Faça o clone do projeto para o ambiente de trabalhoe verifique se consegue correr a aplicação Java com o print “Hello World”.
+
+Developer  2:No  github,  crie  3 novos issues.  O  primeiro  será “adicionar função soma”, o segundo “adicionar função de subtração” e o terceiro “adicionar função de multiplicação”.
+**Deverá atribuir uma label de “Nova funcionalidade”.Caso não tenha essa label devecriar a mesma.**
+**Deverá também atribuir um assignee a cada issue. Os primeiros dois issues deverá atribuir ao developer1 e o segundo deverá atribuir a si próprio.**
+
+Developer  1:Crie  uma  função  chamada  soma()  que  recebe  dois  inteiros  e  retorna  a  sua soma. Crie também uma função chamada subtração()que recebe dois inteiros e retorna a sua subtração.
+
+Developer 1:Dê commit e push das alteraçõespara o githubcom a mensagem “adição da função soma e subtração”. Encerre os issues criados chamados “adicionar função soma” e “adicionar função subtração”
+
+Developer 2:Crie uma função chamada multiplicação() que recebe dois inteiros e retorna a sua multiplicação.
+
+Developer 2:Dê commit e push das alteraçõespara o github com a mensagem “adição da função multiplicação”.  Encerre  os  issuescriados  chamados  “adicionar  função  soma”  e “adicionar função subtração”.
+
+Developer  1:Crie  uma função  chamada  operaçãoComplexa()  que  recebe  dois  números  e retorna a soma da multiplicação desses mesmosdois números com a subtraçãodessesdois números. Deverá utilizar as funções já definidas previamente.
+**𝑚𝑢𝑙𝑡𝑖𝑝𝑙𝑖𝑐𝑎çã𝑜(𝑎,𝑏)+𝑠𝑢𝑏𝑡𝑟𝑎çã𝑜(𝑎,𝑏)**
+
+Developer 1:Dê commit e push das alteraçõespara o github com a mensagem “adição da função operaçãoComplexa”.
+
+Developer  2:Crie  uma funçãochamada  operaçãoComplexa()  que  recebe  dois  números  e retorna  a multiplicaçãoda  soma  desses  mesmosdois  números  com  a subtraçãodos  dois números. Deverá utilizar as funções já definidas previamente.
+**𝑠𝑜𝑚𝑎(𝑎,𝑏)∗𝑠𝑢𝑏𝑡𝑟𝑎çã𝑜(𝑎,𝑏)**
+
+Developer 2:Dê commit e push das alteraçõespara o github com a mensagem “adição da função  operaçãoComplexa”.Note  que  como  o developer  1  fez uma  submissão  para  o repositório, terá que obter essa submissão através do pull.
+**Como ambos definiram duas funções com o mesmo nome irá criar um conflito. Esse conflito terá que ser resolvido.Deverá abrir o ficheiro para resolver o conflito.**
+
+**No exemplo abaixo, pode ver duas funções exemplo com o mesmo nome,mas funcionalidade diferente. Deverá fazer as alterações necessárias de modo queas funções sejam compatíveis (por exemplo, mudar o nome de uma delas).Depois disso deverá fazer commit e push para o github.**
 
 
-### Ex. 2: 
-Considerando o seguinte problema focado numa universidade:
 
-Numa universidade existem salas de aula, escritórios e departamentos. Uma universidade é constituída por vários departamentos, que por sua vez é constituído por vários escritórios e várias salas de aula. Um departamento é constituído adicionalmente por vários professores, que podem ser professores catedráticos, professores associados e professores assistentes. Um professor tem associado um escritório e um escritório pode ter mais do que um professor. A universidade possuí vários cursos, e cada curso possui vários estudantes.
- 
-   **1-)** Identificar as classes e as suas relações.                                   
-   **2-)** Criar um diagrama de classes para o problema acima definido.                                       
-   
-   **Resolução:**
-   
-   ![Ficha 6 - diagrama de classes ](https://user-images.githubusercontent.com/97111394/157500554-61c1cb7a-4a63-42d8-b1b1-6f50173ee283.jpeg)
+
+
