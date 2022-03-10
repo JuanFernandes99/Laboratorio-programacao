@@ -32,7 +32,7 @@ public class Main {
 
 				case 2:
 					System.out.println("Opção disponível só para programadores, deve autenticar-se");
-					menu.adicionarApp();
+					menu.sair();
 
 					break;
 

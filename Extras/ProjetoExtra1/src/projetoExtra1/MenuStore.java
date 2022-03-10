@@ -141,19 +141,22 @@ public class MenuStore {
 	}
 
 	public void adicionarApp() {
-autenticacao();
-
+		
+		autenticacao();
 		System.out.println("\nDigite o nome da App:");
 		String aNome = Main.sc.nextLine();
+		Main.sc.nextLine();
 		System.out.println("\nDigite o preço da App:");
 		double aPreco = Main.sc.nextDouble();
 		Main.sc.nextLine();
 		TipoAplicacao tipoEnum = TipoAplicacao.menuTipo();
 		Aplicacao aplicacao = new Aplicacao(aNome, aPreco, tipoEnum);
 		playStore.adicionaApp(aplicacao);
+		//Main.main(null);
 	}
 
 	public void autenticacaoUserName() {
+		
 		System.out.println("\nDigite o seu userName:");
 		String aUserName = Main.sc.nextLine();
 
@@ -180,10 +183,54 @@ autenticacao();
 			}
 		}
 	}
+
 	public void autenticacao() {
-		
-		
 		autenticacaoUserName();
 		autenticacaoPassword();
+	}
+
+	public void sair() {
+		while (true) {
+			System.out.println("\nEscolha uma das opções disponíveis:");
+			System.out.println("1 - continuar autenticaçao");
+			System.out.println("2 - Sair");
+			try {
+				int opcao = Main.sc.nextInt();
+			
+				switch (opcao) {
+
+				case 1:
+
+					adicionarApp();
+					break;
+
+				case 2:
+					Main.main(null);
+					break;
+
+				case 3:
+					System.out.println(playStore.getAplicacoesPorNome());
+
+					break;
+
+				case 4:
+
+					System.out.println(playStore.getAplicacoesPorVendas());
+
+					break;
+
+				case 5:
+					System.out.println(playStore.getAplicacoes());
+					break;
+
+				default:
+					System.out.println("Só são permitidos números entre 1 a 5 , tente de novo.");
+				}
+			} catch (InputMismatchException e) {
+				System.out.println(
+						"Erro fatal (448): Digite um número inteiro de 1 até 2147483647. Os caracteres também não são permitidos. Tente novamente :)");
+				Main.sc.nextLine(); // Limpar consola
+			}
+		}
 	}
 }
