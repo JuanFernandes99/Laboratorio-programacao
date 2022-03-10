@@ -1,6 +1,6 @@
 # Laboratorio_de_programacao
 
-## Exercicios, fichas e projetos realizados na aula de laboratorio de  programação
+## Exercicios, fichas e projetos realizados na aula de laboratório de  programação
 
 - [x] [Ficha 1](https://github.com/JuanFernandes99/Laboratorio-programacao/tree/main/Fichas/Ficha1)
 - [x] [Ficha 2](https://github.com/JuanFernandes99/Laboratorio-programacao/tree/main/Fichas/Ficha2)
