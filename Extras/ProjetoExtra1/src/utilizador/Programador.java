@@ -10,12 +10,14 @@ public class Programador extends Utilizador {
 	private double lucro;
 	private List<Aplicacao> aplicacoes; // atençao ao apagar as listas
 
-	public Programador(String aNome, int aIdade) {
-		super(aNome, aIdade);
+
+	public Programador(String aNome, int aIdade, String aUserName, String aPassword) {
+		super(aNome, aIdade, aUserName, aPassword);
 		lucro = 0;
 		aplicacoes = new ArrayList<Aplicacao>();
 		avaliacaoGeral = 0;
 	}
+
 
 	public void atribuirApp(Aplicacao aAplicacao) {
 		aplicacoes.add(aAplicacao);

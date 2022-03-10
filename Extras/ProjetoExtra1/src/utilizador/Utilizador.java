@@ -6,10 +6,16 @@ public abstract class Utilizador {
 	protected String nome;
 	protected int idade;
 	protected int id;
+	protected String userName;
+	protected String password;
 
-	public Utilizador(String aNome, int aIdade) {
+
+	public Utilizador(String aNome, int aIdade, String aUserName, String aPassword) {
+		super();
 		nome = aNome;
 		idade = aIdade;
+		userName = aUserName;
+		password = aPassword;
 		id = utilizadorCounter; // Registar novos utilizadores e atribuir automaticamente números únicos.
 		utilizadorCounter++;
 	}
@@ -24,6 +30,21 @@ public abstract class Utilizador {
 
 	public int getId() {
 		return id;
+	}
+	
+
+	public String getUserName() {
+		return userName;
+	}
+	
+	
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setUserName(String aUserName) {
+		userName = aUserName;
 	}
 
 	public void setNome(String aNome) {

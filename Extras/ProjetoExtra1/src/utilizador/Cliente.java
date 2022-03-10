@@ -12,11 +12,13 @@ public class Cliente extends Utilizador {
 	private List<Compra> compras;
 	private List<Aplicacao> aplicacoes;
 
-	public Cliente(String aNome, int aIdade, double aSaldo) {
-		super(aNome, aIdade);
+	public Cliente(String aNome, int aIdade, String aUserName, String aPassword, double aSaldo) {
+		super(aNome, aIdade, aUserName, aPassword);
+		saldo = aSaldo;
 		compras = new ArrayList<Compra>();
 		aplicacoes = new ArrayList<Aplicacao>();
 	}
+
 
 	public void adicionaCompra(Compra aCompra) {
 		compras.add(aCompra);

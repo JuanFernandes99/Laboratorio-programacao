@@ -33,26 +33,24 @@ public class AppStore {
 		return aplicacoes.stream().filter(aplicacao -> aplicacao.getTipo() == tipo).toList();
 	}
 
-	public List<Aplicacao> getAplicacoesPorClassificacao(float classificacaoMinima) {
-		return aplicacoes.stream().filter(aplicacao -> aplicacao.getAvaliacaoGeral() >= classificacaoMinima).toList();
-	}
-
-	public List<Aplicacao> listarPorNome() {
+	public List<Aplicacao> getAplicacoesPorNome() {
 
 		aplicacoes.sort(Comparator.comparing(Aplicacao::getNomeApp));
 		return aplicacoes;
 	}
 
-	public List<Aplicacao> listarPorVendas() {
+	public List<Aplicacao> getAplicacoesPorVendas() {
 
 		aplicacoes.sort(Comparator.comparing(Aplicacao::getNumVendas));
 		return aplicacoes;
 	}
 
-	public List<Aplicacao> listarPorClassificacao() {
+	public List<Aplicacao> getAplicacoesPorClassificacao() {
 		aplicacoes.sort(Comparator.comparing(Aplicacao::getAvaliacaoGeral).reversed());
 		return aplicacoes;
 	}
+	
+
 
 	public List<Aplicacao> getAplicacoes() {
 		return aplicacoes;

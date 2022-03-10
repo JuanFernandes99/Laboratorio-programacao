@@ -11,8 +11,8 @@ public class Main {
 	static Scanner sc = new Scanner(System.in);
 
 	public static void main(String[] args) {
-
 		MenuStore menu = new MenuStore();
+
 		// atribuir ao programador apps
 		// programador2.atribuirApp(fruitNinja);
 		// programador1.atribuirApp(clashOfClans);
@@ -31,6 +31,7 @@ public class Main {
 					break;
 
 				case 2:
+					System.out.println("Opção disponível só para programadores, deve autenticar-se");
 					menu.adicionarApp();
 
 					break;
@@ -41,8 +42,8 @@ public class Main {
 					break;
 
 				case 4:
-					// System.out.println("Esfregadelas Acumuladas: " +
-					// Lampada.getEsfregadelasAcumuladas());
+
+					menu.realizarCompras();
 
 					break;
 
@@ -65,9 +66,9 @@ public class Main {
 		 * 
 		 * // Criar Compra
 		 * 
-		 * Compra compra1 = new Compra(cliente1, Arrays.asList(fruitNinja,
-		 * clashOfClans)); Compra compra2 = new Compra(cliente2,
-		 * Arrays.asList(fruitNinja));
+		 * Compra compra1 = new Compra(cliente1,
+		 * Arrays.asList(fruitNinja,clashOfClans)); Compra compra2 = new
+		 * Compra(cliente2,Arrays.asList(fruitNinja));
 		 * 
 		 * 
 		 * 
