@@ -19,18 +19,16 @@ public class AppStore {
 		compras = new ArrayList<Compra>();
 	}
 
-	public void adicionaUtilizador(Utilizador aUtilizador) {
+	public void adicionarUtilizador(Utilizador aUtilizador) {
 		utilizadores.add(aUtilizador);
 	}
-
 	public void adicionarCompra(Compra aCompra) {
 		compras.add(aCompra);
 	}
-
 	public void adicionaApp(Aplicacao aAplicacoes) { // b-) Incluir novas aplicações com a informação necessária.
 		aplicacoes.add(aAplicacoes);
 	}
-
+	
 	public List<Aplicacao> getAplicacoesPorCategoria(TipoAplicacao tipo) {
 		return aplicacoes.stream().filter(aplicacao -> aplicacao.getTipo() == tipo).toList();
 	}
