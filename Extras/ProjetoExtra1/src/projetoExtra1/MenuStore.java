@@ -189,7 +189,7 @@ public class MenuStore {
 		autenticacaoPassword();
 	}
 
-	public void sair() {
+	public void sairAutenticacaoProg() {
 		while (true) {
 			System.out.println("\nEscolha uma das opções disponíveis:");
 			System.out.println("1 - continuar autenticaçao");
@@ -206,21 +206,6 @@ public class MenuStore {
 
 				case 2:
 					Main.main(null);
-					break;
-
-				case 3:
-					System.out.println(playStore.getAplicacoesPorNome());
-
-					break;
-
-				case 4:
-
-					System.out.println(playStore.getAplicacoesPorVendas());
-
-					break;
-
-				case 5:
-					System.out.println(playStore.getAplicacoes());
 					break;
 
 				default:
