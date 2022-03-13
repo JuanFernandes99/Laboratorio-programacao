@@ -70,9 +70,14 @@ public class ControladorEmpresa {
 		return servicePessoa.getPessoaById(aId);
 	}
 
-	@GetMapping("/testeParametros")
-	public Pessoa testeParametros() {
+	@GetMapping("/PessoaTesteParametros")
+	public Pessoa pessoaTesteParametros() {
 		return servicePessoa.testeParametros();
+	}
+	
+	@GetMapping("/EmpresaTesteParametros")
+	public Empresa empresaTesteParametros() {
+		return serviceEmpresa.testeParametros();
 	}
 
 }

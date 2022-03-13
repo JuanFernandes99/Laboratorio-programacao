@@ -9,4 +9,6 @@ public class StringController {
 	public String teste() {
 		return "olá testee";
 	}
+	
+	
 }
