@@ -10,7 +10,7 @@ Considere  que  se  pretende  desenvolver  uma  aplicação  para  registo  de  
 Implemente  uma  classe  Porto  (apenas  os  atributos  e  construtor)  para  armazenar  a informação  sobre  a  atracagem  de  navios  (use  o  tipo  de  coleção  que  considerar  mais apropriado).  A  classe  deve  incluir  métodos  para  (nota:  pode  adicionar  métodos  às  classes anteriores se necessário):
  
    **1-)** Adicionar um novo navio sem permitir a duplicação da Identificador do Navio.                                   
-   **2-)** Devolver a quantidade máxima total de contentores de todos os navios porta-contentoresatracados no porto.
+   **2-)** Devolver a quantidade máxima total de contentores de todos os navios porta-contentoresatracados no porto                                
    **3-)** Devolver a capacidade total de carga de todos os navios porta-contentorese petroleiros atracados no porto, sabendo que um contentor tem capacidade para 10 toneladas;
 
 ### Ex. 3: 
