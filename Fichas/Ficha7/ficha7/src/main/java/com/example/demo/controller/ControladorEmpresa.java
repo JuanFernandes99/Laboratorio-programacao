@@ -28,8 +28,6 @@ public class ControladorEmpresa {
 		serviceEmpresa = aServiceEmpresa;
 		servicePessoa = aServicePessoa;
 	}
-	
-
 
 	@PostMapping("/addPessoa")
 	public List<Pessoa> addPessoa(@RequestBody Pessoa aPessoa) {
@@ -39,18 +37,18 @@ public class ControladorEmpresa {
 			return Collections.emptyList();
 		}
 		Empresa empresa = serviceEmpresa.getEmpresaById(aPessoa.getEmpresaId());
-        empresa.adicionarPessoa(aPessoa);
+		empresa.adicionarPessoa(aPessoa);
 
-    return servicePessoa.addPessoa(aPessoa);
+		return servicePessoa.addPessoa(aPessoa);
 	}
 
 	@PutMapping("/updatePessoa")
 	public String updatePessoa(@RequestBody Pessoa aPessoa) {
-		 if (servicePessoa.updatePessoa(aPessoa)){
-	            return "Pessoa updated com sucesso";
-	        }
-	        return "Erro a atualizar a pessoa";
-	    }
+		if (servicePessoa.updatePessoa(aPessoa)) {
+			return "Pessoa updated com sucesso";
+		}
+		return "Erro a atualizar a pessoa";
+	}
 
 	@GetMapping("/getPessoas")
 	public List<Pessoa> getPessoas() {
