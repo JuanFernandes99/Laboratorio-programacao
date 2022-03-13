@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.model.Empresa;
 import com.example.demo.model.Pessoa;
 import com.example.demo.service.ServiceEmpresa;
 import com.example.demo.service.ServicePessoa;
@@ -37,9 +38,10 @@ public class ControladorEmpresa {
 
 			return Collections.emptyList();
 		}
+		Empresa empresa = serviceEmpresa.getEmpresaById(aPessoa.getEmpresaId());
+        empresa.adicionarPessoa(aPessoa);
 
-		return servicePessoa.addPessoa(aPessoa);
-
+    return servicePessoa.addPessoa(aPessoa);
 	}
 
 	@PutMapping("/updatePessoa")

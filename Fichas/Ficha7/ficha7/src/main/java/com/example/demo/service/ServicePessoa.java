@@ -92,7 +92,7 @@ public class ServicePessoa {
 	}
 
 	public Pessoa testeParametros() {
-		Pessoa p = new Pessoa("David", 7);
+		Pessoa p = new Pessoa("David", 7, 1);
 		return p;
 	}
 

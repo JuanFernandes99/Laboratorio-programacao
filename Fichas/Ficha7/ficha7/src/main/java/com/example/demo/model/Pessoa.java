@@ -6,10 +6,12 @@ public class Pessoa {
 	private String nome;
 	private int idade;
 	private String email;
+	private int empresaId;
 
-	public Pessoa(String aNome, int aIdade) {
+	public Pessoa(String aNome, int aIdade, int aEmpresaId) {
 
 		nome = aNome;
+		empresaId = aEmpresaId;
 		idade = aIdade;
 		id = numPessoas;
 		numPessoas++;
@@ -29,6 +31,10 @@ public class Pessoa {
 
 	public String getEmail() {
 		return email;
+	}
+	
+	public int getEmpresaId() {
+		return empresaId;
 	}
 
 	public void setEmail(String aEmail) {

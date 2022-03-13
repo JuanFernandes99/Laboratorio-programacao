@@ -56,19 +56,19 @@ public class ServiceEmpresa {
 
 	}
 
-	public String getEmpresaById(String aId) {
+	public Empresa getEmpresaById(int id) {
 		try {
-			Integer id_empresa = Integer.parseInt(aId);
+			
 
 			for (Empresa empresa : empresas) {
 
-				if (empresa.getId() == id_empresa) {
-					return empresa.getNome() + " ID: " + empresa.getId();
+				if (empresa.getId() == id) {
+					return empresa;
 				}
 			}
-			return "Id errado";
+			return null;
 		} catch (Exception e) {
-			return "Id errado";
+			return null;
 		}
 
 	}
