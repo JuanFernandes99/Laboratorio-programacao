@@ -12,10 +12,9 @@ public class Empresa {
 	private int numFuncionariosDesdeCriacao;
 	private List<Pessoa> pessoasEmpresa;
 
-	public Empresa(String aNome, String aMorada, int aNumFuncionariosDesdeCriacao) {
+	public Empresa(String aNome, String aMorada) {
 		nome = aNome;
 		morada = aMorada;
-		numFuncionariosDesdeCriacao = aNumFuncionariosDesdeCriacao;
 		id = numEmpresas;
 		numEmpresas++;
 		pessoasEmpresa = new ArrayList<Pessoa>();

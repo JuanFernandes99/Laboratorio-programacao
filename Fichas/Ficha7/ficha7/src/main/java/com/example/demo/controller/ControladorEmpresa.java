@@ -69,6 +69,29 @@ public class ControladorEmpresa {
 	public String getPessoaById(@PathVariable String aId) {
 		return servicePessoa.getPessoaById(aId);
 	}
+	
+	@PostMapping("/addEmpresa")
+	public List<Empresa> addEmpresa(@RequestBody Empresa aEmpresa) {
+
+		if (aEmpresa.getNome() == null || aEmpresa.getNome().isBlank()) {
+
+			return Collections.emptyList();
+		}
+	return serviceEmpresa.addEmpresa(aEmpresa);
+	}
+
+
+
+	@GetMapping("/getEmpresas")
+	public List<Empresa> getEmpresas() {
+		return serviceEmpresa.getEmpresas();
+	}
+
+
+	@GetMapping("/getEmpresasById/{id}")
+	public Empresa getEmpresaById(@PathVariable int aId) {
+		return serviceEmpresa.getEmpresaById(aId);
+	}
 
 	@GetMapping("/PessoaTesteParametros")
 	public Pessoa pessoaTesteParametros() {
