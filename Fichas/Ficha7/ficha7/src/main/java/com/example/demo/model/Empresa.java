@@ -19,13 +19,13 @@ public class Empresa {
 		numEmpresas++;
 		pessoasEmpresa = new ArrayList<Pessoa>();
 	}
-	
-	public void adicionarPessoa(Pessoa aPessoa) {
+
+	public void adicionarPessoa(Pessoa aPessoa) { // ver
 
 		pessoasEmpresa.add(aPessoa);
 
 	}
-	
+
 	public String getNome() {
 		return nome;
 	}
@@ -45,7 +45,7 @@ public class Empresa {
 	public List<Pessoa> getPessoas() {
 		return pessoasEmpresa;
 	}
-	
+
 	public int getId() {
 		return id;
 	}
@@ -70,6 +70,11 @@ public class Empresa {
 		pessoasEmpresa = aPessoas;
 	}
 
-
+	@Override
+	public String toString() {
+		return "Empresa [id=" + id + ", nome=" + nome + ", morada=" + morada + ", numFuncionariosAtual="
+				+ numFuncionariosAtual + ", numFuncionariosDesdeCriacao=" + numFuncionariosDesdeCriacao
+				+ ", pessoasEmpresa=" + pessoasEmpresa + "]";
+	}
 
 }

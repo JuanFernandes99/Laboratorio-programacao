@@ -6,10 +6,10 @@ public class Pessoa {
 	private String nome;
 	private int idade;
 	private String email;
-	private int empresaId;
+	private int empresaId; // Chave estrangeira colocada no lado de muitos.
 
-	public Pessoa(String aNome, int aIdade, int aEmpresaId) {
-
+	public Pessoa(String aNome, int aIdade, int aEmpresaId, String aEmail) {
+		email = aEmail;
 		nome = aNome;
 		empresaId = aEmpresaId;
 		idade = aIdade;
@@ -32,7 +32,7 @@ public class Pessoa {
 	public String getEmail() {
 		return email;
 	}
-	
+
 	public int getEmpresaId() {
 		return empresaId;
 	}
@@ -51,9 +51,8 @@ public class Pessoa {
 
 	@Override
 	public String toString() {
-		return "Pessoa [id=" + id + ", nome=" + nome + ", idade=" + idade + ", email=" + email + "]";
+		return "Pessoa [Id=" + id + ", Nome=" + nome + ", Idade=" + idade + ", Email=" + email + ", EmpresaId="
+				+ empresaId + "]";
 	}
-
-
 
 }
