@@ -1,6 +1,5 @@
 package com.example.demo.controller;
 
-import java.util.Collections;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,58 +8,21 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.dto.SimpleResponse;
 import com.example.demo.model.Empresa;
-import com.example.demo.model.Pessoa;
 import com.example.demo.service.ServiceEmpresa;
-import com.example.demo.service.ServicePessoa;
 
 //controlador trata exceçao e chama a funçao do service
 @RestController
 public class ControladorEmpresa {
 	private final ServiceEmpresa serviceEmpresa;
-	private final ServicePessoa servicePessoa;
 
 	@Autowired
-	public ControladorEmpresa(ServiceEmpresa aServiceEmpresa, ServicePessoa aServicePessoa) {
+	public ControladorEmpresa(ServiceEmpresa aServiceEmpresa) {
 		serviceEmpresa = aServiceEmpresa;
-		servicePessoa = aServicePessoa;
-	}
-
-	@PostMapping("/addPessoa")
-	public ResponseEntity<SimpleResponse> addPessoa(@RequestBody Pessoa aPessoa) {
-
-		Empresa empresa = serviceEmpresa.getEmpresaById(aPessoa.getEmpresaId());
-		empresa.adicionarPessoa(aPessoa);
-
-		return servicePessoa.addPessoa(aPessoa);
-	}
-
-	@PutMapping("/updatePessoa")
-	public String updatePessoaById(@RequestBody Pessoa aPessoa) {
-		if (servicePessoa.updatePessoaById(aPessoa)) {
-			return "Pessoa updated com sucesso";
-		}
-		return "Erro a atualizar a pessoa";
-	}
-
-	@GetMapping("/getPessoas")
-	public List<Pessoa> getPessoas() {
-		return servicePessoa.getAllPessoas();
-	}
-
-	@DeleteMapping("/deletePessoa/{id}")
-	public ResponseEntity<SimpleResponse> deletePessoa(@PathVariable String aId) {
-		return servicePessoa.deletePessoaById(aId);
-	}
-
-	@GetMapping("/getPessoasById/{id}")
-	public ResponseEntity<SimpleResponse> getPessoaById(@PathVariable String aId) {
-		return servicePessoa.getPessoaById(aId);
 	}
 
 	@PostMapping("/addEmpresa")
@@ -74,18 +36,14 @@ public class ControladorEmpresa {
 		return serviceEmpresa.getAllEmpresas();
 	}
 
-	@GetMapping("/getEmpresasById/{id}")
+	@GetMapping("/getEmpresasById/{aId}")
 	public Empresa getEmpresaById(@PathVariable int aId) {
 		return serviceEmpresa.getEmpresaById(aId);
 	}
-	
-	@DeleteMapping("/deleteEmpresa/{id}")
+
+	@DeleteMapping("/deleteEmpresa/{aId}")
 	public ResponseEntity<SimpleResponse> deleteEmpresa(@PathVariable int aId) {
 		return serviceEmpresa.deleteEmpresaById(aId);
-	}
-	@GetMapping("/PessoaTesteParametros")
-	public Pessoa pessoaTesteParametros() {
-		return servicePessoa.testeParametros();
 	}
 
 	@GetMapping("/EmpresaTesteParametros")

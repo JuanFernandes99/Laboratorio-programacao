@@ -9,8 +9,8 @@ public class SimpleResponsePessoas extends SimpleResponse {
 
 	List<Pessoa> pessoas;
 
-	public SimpleResponsePessoas() {
-		//pessoas = aPessoas;
+	public SimpleResponsePessoas(List<Pessoa> aPessoas) {
+		pessoas = aPessoas;
 	}
 
 	public List<Pessoa> getPessoas() {
