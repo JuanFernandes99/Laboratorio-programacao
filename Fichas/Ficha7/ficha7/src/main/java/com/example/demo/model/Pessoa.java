@@ -1,5 +1,9 @@
 package com.example.demo.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+@Entity
+@Table(name = "Pessoa")
 public class Pessoa {
 	private static int numPessoas = 0;
 	private int id;
@@ -7,6 +11,7 @@ public class Pessoa {
 	private int idade;
 	private String email;
 	private int empresaId; // Chave estrangeira colocada no lado de muitos.
+
 
 	public Pessoa(String aNome, int aIdade, int aEmpresaId, String aEmail) {
 		email = aEmail;

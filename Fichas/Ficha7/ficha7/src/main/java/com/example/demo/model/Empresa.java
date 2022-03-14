@@ -58,14 +58,6 @@ public class Empresa {
 		morada = aMorada;
 	}
 
-	public void setNumFuncionariosAtual(int aNumFuncionariosAtual) {
-		numFuncionariosAtual = aNumFuncionariosAtual;
-	}
-
-	public void setNumFuncionariosDesdeCriacao(int aNumFuncionariosDesdeCriacao) {
-		numFuncionariosDesdeCriacao = aNumFuncionariosDesdeCriacao;
-	}
-
 	public void setPessoas(List<Pessoa> aPessoas) {
 		pessoasEmpresa = aPessoas;
 	}
