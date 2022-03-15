@@ -1,54 +1,86 @@
 package com.example.demo.controller;
 
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
-
+import com.example.demo.dto.GetEmpresaResponse;
 import com.example.demo.dto.SimpleResponse;
 import com.example.demo.model.Empresa;
-import com.example.demo.service.ServiceEmpresa;
+import com.example.demo.service.PessoaEmpresaService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
-//controlador trata exceçao e chama a funçao do service
+import java.util.List;
+import java.util.Optional;
+
 @RestController
 public class ControladorEmpresa {
-	private final ServiceEmpresa serviceEmpresa;
+    private final PessoaEmpresaService pessoaEmpresaService;
 
-	@Autowired
-	public ControladorEmpresa(ServiceEmpresa aServiceEmpresa) {
-		serviceEmpresa = aServiceEmpresa;
-	}
+    @Autowired
+    public ControladorEmpresa(PessoaEmpresaService pessoaEmpresaService) {
+        this.pessoaEmpresaService = pessoaEmpresaService;
+    }
 
-	@PostMapping("/addEmpresa")
-	public ResponseEntity<SimpleResponse> addEmpresa(@RequestBody Empresa aEmpresa) {
+    @GetMapping("/getAllEmpresas")
+    public List<Empresa> getAllEmpresas(){
+        return pessoaEmpresaService.getListaEmpresas();
+    }
 
-		return serviceEmpresa.addEmpresa(aEmpresa);
-	}
+    @PostMapping("/addEmpresa")
+    public ResponseEntity<SimpleResponse> addEmpresa(@RequestBody Empresa aEmpresa){
+        SimpleResponse sr = new SimpleResponse();
+        if (pessoaEmpresaService.addEmpresa(aEmpresa)){
+            sr.setSucess("Sucesso ao inserir a empresa");
+            return ResponseEntity
+                    .status(HttpStatus.OK)
+                    .body(sr);
+        }
 
-	@GetMapping("/getEmpresas")
-	public List<Empresa> getEmpresas() {
-		return serviceEmpresa.getAllEmpresas();
-	}
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(sr);
+    }
 
-	@GetMapping("/getEmpresasById/{aId}")
-	public Empresa getEmpresaById(@PathVariable int aId) {
-		return serviceEmpresa.getEmpresaById(aId);
-	}
+    @DeleteMapping("/deleteEmpresa")
+    public ResponseEntity<SimpleResponse> deleteEmpresa(@RequestBody Empresa aEmpresa){
+        SimpleResponse sr = new SimpleResponse();
 
-	@DeleteMapping("/deleteEmpresa/{aId}")
-	public ResponseEntity<SimpleResponse> deleteEmpresa(@PathVariable int aId) {
-		return serviceEmpresa.deleteEmpresaById(aId);
-	}
+        if (pessoaEmpresaService.deleteEmpresa(aEmpresa)){
+            sr.setSucess("Sucesso ao remover a empresa");
+            return ResponseEntity
+                    .status(HttpStatus.OK)
+                    .body(sr);
+        }
 
-	@GetMapping("/EmpresaTesteParametros")
-	public Empresa empresaTesteParametros() {
-		return serviceEmpresa.testeParametros();
-	}
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(sr);
+    }
+
+    @PutMapping("/updateEmpresa")
+    public ResponseEntity<SimpleResponse> updateEmpresa(@RequestBody Empresa aEmpresa){
+        SimpleResponse sr = new SimpleResponse();
+
+        if (pessoaEmpresaService.updateEmpresaById(aEmpresa)){
+            sr.setSucess("Sucesso ao atualizar a empresa");
+            return ResponseEntity
+                    .status(HttpStatus.OK)
+                    .body(sr);
+        }
+
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(sr);
+    }
+
+    @GetMapping("/geEmpresaById")
+    public ResponseEntity<SimpleResponse> getEmpresa(@RequestBody Empresa aEmpresa){
+        GetEmpresaResponse ger = new GetEmpresaResponse();
+
+        Optional<Empresa> empresaOptional = pessoaEmpresaService.getEmpresaById(aEmpresa);
+
+        if (empresaOptional.isEmpty()){
+            ger.setMessage("Empresa não encontrada");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ger);
+        }else{
+            ger.setEmpresa(empresaOptional.get());
+            ger.setSucess("Empresa Encontrada");
+            return ResponseEntity.status(HttpStatus.OK).body(ger);
+        }
+    }
 
 }

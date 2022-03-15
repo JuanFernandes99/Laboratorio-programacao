@@ -10,6 +10,11 @@ public class SimpleResponse {
 		message = "Ocorreu um erro :(";
 	}
 
+	public void setSucess(String aMessage) {
+		statusOk = true;
+		message = aMessage;
+	}
+
 	public boolean isStatusOk() {
 		return statusOk;
 	}
@@ -23,16 +28,6 @@ public class SimpleResponse {
 	}
 
 	public void setMessage(String aMessage) {
-		message = aMessage;
-	}
-	
-	public void setAsError() {
-		statusOk = false;
-		message = "Ocorreu um erro :(";
-	}
-	
-	public void setAsSucess(String aMessage) {
-		statusOk = true;
 		message = aMessage;
 	}
 

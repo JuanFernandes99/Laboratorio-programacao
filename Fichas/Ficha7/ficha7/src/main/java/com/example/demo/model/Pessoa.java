@@ -1,30 +1,23 @@
 package com.example.demo.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import java.util.UUID;
 
-@Entity
-@Table(name = "Pessoa")
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 public class Pessoa {
-	private static int numPessoas = 0;
-	private int id;
+
 	private String nome;
 	private int idade;
 	private String email;
-	private int empresaId; // Chave estrangeira colocada no lado de muitos.
+	private UUID id;
+	@JsonIgnore // para evitar o loop infinito
+	private Empresa empresa;
 
-
-	public Pessoa(String aNome, int aIdade, int aEmpresaId, String aEmail) {
+	public Pessoa(String aNome, int aIdade, String aEmail) {
 		email = aEmail;
 		nome = aNome;
-		empresaId = aEmpresaId;
 		idade = aIdade;
-		id = numPessoas;
-		numPessoas++;
-	}
-
-	public int getId() {
-		return id;
+		id = UUID.randomUUID();
 	}
 
 	public String getNome() {
@@ -39,8 +32,12 @@ public class Pessoa {
 		return email;
 	}
 
-	public int getEmpresaId() {
-		return empresaId;
+	public Empresa getEmpresa() {
+		return empresa;
+	}
+
+	public UUID getId() {
+		return id;
 	}
 
 	public void setEmail(String aEmail) {
@@ -55,10 +52,13 @@ public class Pessoa {
 		idade = aIdade;
 	}
 
+	public void setEmpresa(Empresa aEmpresa) {
+		empresa = aEmpresa;
+	}
+
 	@Override
 	public String toString() {
-		return "Pessoa [Id=" + id + ", Nome=" + nome + ", Idade=" + idade + ", Email=" + email + ", EmpresaId="
-				+ empresaId + "]";
+		return "Pessoa [nome=" + nome + ", idade=" + idade + ", email=" + email + ", empresa=" + empresa + "]";
 	}
 
 }
