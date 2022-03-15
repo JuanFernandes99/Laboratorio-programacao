@@ -7,18 +7,35 @@ import javax.persistence.*;
 @Entity
 @Table(name = "Pessoa")
 public class Pessoa {
-
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
 
+	private Long id;
 	private int idade;
 	private String nome;
 	private String email;
+	
+    @ManyToOne
+    @JoinColumn(name="Empresa_id ")
+    
+	@JsonIgnore
+	private Empresa empresa; //temos de utilizar o nome "empresa" para o one to many
 
 	public Long getId() {
 		return id;
 	}
+
+	
+	public Empresa getEmpresa() {
+		return empresa;
+	}
+
+
+	public void setEmpresa(Empresa aEmpresa) {
+		empresa = aEmpresa;
+	}
+
 
 	public int getIdade() {
 		return idade;

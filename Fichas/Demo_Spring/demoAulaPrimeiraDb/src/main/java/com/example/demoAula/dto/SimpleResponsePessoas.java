@@ -9,14 +9,14 @@ public class SimpleResponsePessoas extends SimpleResponse{
     List<Pessoa> pessoas;
 
     public SimpleResponsePessoas() {
-        this.pessoas = new ArrayList<>();
+        pessoas = new ArrayList<>();
     }
 
     public List<Pessoa> getPessoas() {
         return pessoas;
     }
 
-    public void setPessoas(List<Pessoa> pessoas) {
-        this.pessoas = pessoas;
+    public void setPessoas(List<Pessoa> aPessoas) {
+        pessoas = aPessoas;
     }
 }

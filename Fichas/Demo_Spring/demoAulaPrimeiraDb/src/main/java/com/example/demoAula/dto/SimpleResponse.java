@@ -1,42 +1,37 @@
 package com.example.demoAula.dto;
 
 public class SimpleResponse {
-    private boolean statusOk;
-    private String message;
+	private boolean statusOk;
+	private String message;
 
-    public SimpleResponse(){
-        statusOk = false;
-        message = "An error has occurred.";
-    }
+	public SimpleResponse() {
+		statusOk = false;
+		message = "An error has occurred.";
+	}
 
-    public boolean isStatus() {
-        return statusOk;
-    }
+	public boolean isStatus() {
+		return statusOk;
+	}
 
-    public void setStatus(boolean status) {
-        this.statusOk = status;
-    }
+	public void setStatus(boolean aStatus) {
+		statusOk = aStatus;
+	}
 
-    public String getMessage() {
-        return message;
-    }
+	public String getMessage() {
+		return message;
+	}
 
-    public void setMessage(String message) {
-        this.message = message;
-    }
+	public void setMessage(String aMessage) {
+		message = aMessage;
+	}
 
-    public void setAsError(){
-        statusOk = false;
-        message = "An error has occurred.";
-    }
+	public void setAsSuccess(String aMessage) {
+		statusOk = true;
+		message = aMessage;
+	}
 
-    public void setAsSuccess(String message){
-        statusOk = true;
-        this.message = message;
-    }
-
-    public void setAsError(String message){
-        statusOk = false;
-        this.message = message;
-    }
+	public void setAsError(String aMessage) {
+		statusOk = false;
+		message = aMessage;
+	}
 }
