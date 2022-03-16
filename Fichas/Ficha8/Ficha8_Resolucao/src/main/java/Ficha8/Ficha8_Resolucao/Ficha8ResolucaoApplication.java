@@ -1,4 +1,4 @@
-package Ficha8.Ficha8_Resolucao;
+package Ficha8.Ficha8_resolucao;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
