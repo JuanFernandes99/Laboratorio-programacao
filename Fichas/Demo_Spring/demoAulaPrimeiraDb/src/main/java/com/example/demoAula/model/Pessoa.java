@@ -7,35 +7,34 @@ import javax.persistence.*;
 @Entity
 @Table(name = "Pessoa")
 public class Pessoa {
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 
+	@Id
+	@Column(name = "id", nullable = false)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+
 	private int idade;
 	private String nome;
 	private String email;
-	
-    @ManyToOne
-    @JoinColumn(name="Empresa_id ")
-    
-	@JsonIgnore
-	private Empresa empresa; //temos de utilizar o nome "empresa" para o one to many
+
+	@ManyToOne
+	@JoinColumn(name = "Empresa_id ")
+
+	@JsonIgnore // com o JsonIgnore n conseguimos ver a empresa da pessoa, mas é importante para
+				// evitar o loop infinito
+	private Empresa empresa; // temos de utilizar o nome "empresa" para o one to many
 
 	public Long getId() {
 		return id;
 	}
 
-	
 	public Empresa getEmpresa() {
 		return empresa;
 	}
 
-
 	public void setEmpresa(Empresa aEmpresa) {
 		empresa = aEmpresa;
 	}
-
 
 	public int getIdade() {
 		return idade;
@@ -63,7 +62,8 @@ public class Pessoa {
 
 	@Override
 	public String toString() {
-		return "Pessoa [id=" + id + ", idade=" + idade + ", nome=" + nome + ", email=" + email + "]";
+		return "Pessoa [id=" + id + ", idade=" + idade + ", nome=" + nome + ", email=" + email + ", empresa=" + empresa
+				+ "]";
 	}
 
 }

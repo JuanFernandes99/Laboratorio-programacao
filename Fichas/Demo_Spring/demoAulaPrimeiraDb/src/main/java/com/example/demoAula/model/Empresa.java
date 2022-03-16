@@ -3,6 +3,7 @@ package com.example.demoAula.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,14 +18,16 @@ public class Empresa {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id", nullable = false)
 	private Long id;
+	
 	private String nome;
 	private String morada;
 	private int numFuncionariosAtual;
 	private int numFuncionariosDesdeCriacao;
 
+	
 	@OneToMany(mappedBy = "empresa")
-
 	private List<Pessoa> listaPessoas = new ArrayList<>();
 
 	

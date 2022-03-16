@@ -4,34 +4,33 @@ import com.example.demoAula.utils.Wrapper;
 import com.example.demoAula.dto.SimpleResponse;
 import com.example.demoAula.dto.SimpleResponsePessoas;
 import com.example.demoAula.model.Pessoa;
-import com.example.demoAula.service.PessoaService;
+import com.example.demoAula.service.PessoaEmpresaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import com.example.demoAula.service.EmpresaService;
-import com.example.demoAula.service.PessoaService;
 import java.util.List;
 
 @RestController
 public class PessoaController {
-
-	private final PessoaService pessoa_service;
+	
+	private final PessoaEmpresaService pessoaEmpresaService;
 
 	@Autowired
-	public PessoaController(PessoaService pessoa_service) {
-		this.pessoa_service = pessoa_service;
+	public PessoaController(PessoaEmpresaService aPessoaEmpresa_service) {
+
+		pessoaEmpresaService = aPessoaEmpresa_service;
 	}
 
 	@GetMapping("/getPessoas")
 	public List<Pessoa> getPessoas() {
-		return pessoa_service.getPessoas();
+		return pessoaEmpresaService.getPessoas();
 	}
 
 	@PostMapping("/addPessoaEmpresa")
 	public ResponseEntity<SimpleResponse> addPessoa(@RequestBody Wrapper aWrapper) {
 		SimpleResponse sr = new SimpleResponse();
-		if (pessoa_service.addPessoaToEmpresa(aWrapper.getPessoa(), aWrapper.getEmpresa())) {
+		if (pessoaEmpresaService.addPessoaToEmpresa(aWrapper.getPessoa(), aWrapper.getEmpresa())) {
 			sr.setAsSuccess("Pessoa adicionada a empresa");
 			return ResponseEntity.status(HttpStatus.OK).body(sr);
 		}
@@ -57,9 +56,9 @@ public class PessoaController {
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(sr);
 		}
 
-		if (pessoa_service.addPessoa(aPessoa)) {
+		if (pessoaEmpresaService.addPessoa(aPessoa)) {
 			sr.setAsSuccess("Pessoa Inserida Com Sucesso");
-			sr.setPessoas(pessoa_service.getPessoas());
+			sr.setPessoas(pessoaEmpresaService.getPessoas());
 			return ResponseEntity.status(HttpStatus.OK).body(sr);
 
 		} else {
@@ -73,7 +72,7 @@ public class PessoaController {
 	public SimpleResponse removePessoa2(@PathVariable String aId) {
 		SimpleResponse sr = new SimpleResponse();
 
-		if (pessoa_service.removePessoa2(aId)) {
+		if (pessoaEmpresaService.removeEmpresa2(aId)) {
 			sr.setAsSuccess("Pessoa Removida Com Sucesso");
 		} else {
 			sr.setAsError("Erro a Remover a Pessoa");
@@ -87,7 +86,7 @@ public class PessoaController {
 		SimpleResponsePessoas sr = new SimpleResponsePessoas();
 		sr.setAsSuccess("Sucesso");
 
-		if (pessoa_service.removePessoa(aPessoa)) {
+		if (pessoaEmpresaService.removePessoa(aPessoa)) {
 			sr.setAsSuccess("Pessoa Removida Com Sucesso");
 		} else {
 			sr.setAsError("Erro a Remover a Pessoa");
@@ -110,7 +109,7 @@ public class PessoaController {
 			return sr;
 		}
 
-		boolean suc = pessoa_service.updatePessoa(aPessoa);
+		boolean suc = pessoaEmpresaService.updatePessoa(aPessoa);
 
 		if (suc) {
 			sr.setAsSuccess("Pessoa atualizada com sucesso");

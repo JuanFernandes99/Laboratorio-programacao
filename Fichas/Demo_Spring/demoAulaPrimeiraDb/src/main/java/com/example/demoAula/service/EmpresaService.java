@@ -1,8 +1,4 @@
 package com.example.demoAula.service;
-
-import static java.lang.Float.NaN;
-import static java.lang.Long.parseLong;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -23,7 +19,8 @@ public class EmpresaService {
 	}
 
 	public boolean addEmpresa(Empresa aEmpresa) {
-		if (aEmpresa.getId() == null || aEmpresa.getNumFuncionariosAtual() == 0 || aEmpresa.getNumFuncionariosDesdeCriacao() == 0) {
+		if (aEmpresa.getId() == null || aEmpresa.getNumFuncionariosAtual() == 0
+				|| aEmpresa.getNumFuncionariosDesdeCriacao() == 0) {
 			empresaRepo.save(aEmpresa);
 			return true;
 		}
@@ -34,30 +31,15 @@ public class EmpresaService {
 		if (aEmpresa.getId() == null || empresaRepo.findById(aEmpresa.getId()).isEmpty()) {
 			return false;
 		}
-
+		aEmpresa.setPessoas(null);
 		Empresa empresa = empresaRepo.findById(aEmpresa.getId()).get(); // o get é para devolver a empresa
 		empresaRepo.delete(empresa);
 
 		return true;
 	}
 
-	public boolean removeEmpresa2(String aId) {
-		try { // pq da excepçao se meto uma letrea
-			Long id_long = parseLong(aId);
 
-			if (aId == null || id_long == NaN || empresaRepo.findById(id_long).isEmpty()) {
-				return false;
-			}
-
-			Empresa empresa = empresaRepo.findById(id_long).get();
-			empresaRepo.delete(empresa);
-
-			return true;
-		} catch (Exception e) {
-			return false;
-		}
-
-	}
+	
 
 	public boolean updateEmpresa(Empresa aEmpresa) {
 		if (aEmpresa.getId() == null || empresaRepo.findById(aEmpresa.getId()).isEmpty()) {
@@ -73,7 +55,6 @@ public class EmpresaService {
 		if (e.getMorada() != null || !e.getMorada().isBlank()) {
 			e.setMorada(aEmpresa.getMorada());
 		}
-
 
 		empresaRepo.save(e);
 

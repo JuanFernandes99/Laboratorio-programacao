@@ -75,10 +75,16 @@ public class Banco {
 	public List<Casa> getCasas() {
 		return casas;
 	}
+	
+	public String getNome() {
+		return nome;
+	}
 	// Setters
 
 	public void setContasBancarias(List<ContaBancaria> aContasBancarias) {
 		contasBancarias = aContasBancarias;
 	}
+
+
 
 }

@@ -21,7 +21,7 @@ public class ControladorPessoa {
     @PostMapping("/addPessoa")
     public  List<Pessoa> addPessoa(@RequestBody Pessoa pessoa){
         if (pessoa.getNome() == null || pessoa.getNome().isBlank() || pessoa.getIdade()>0 ){
-            return Collections.EMPTY_LIST;
+            return Collections.emptyList();
         }
 
         List<Pessoa> aux =  servicePessoa.addPessoa(pessoa);

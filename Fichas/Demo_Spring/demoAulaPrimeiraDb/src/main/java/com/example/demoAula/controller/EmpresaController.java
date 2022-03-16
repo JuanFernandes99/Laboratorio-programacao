@@ -13,25 +13,25 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demoAula.service.PessoaEmpresaService;
 import com.example.demoAula.dto.SimpleResponse;
 import com.example.demoAula.dto.SimpleResponseEmpresas;
 import com.example.demoAula.model.Empresa;
-import com.example.demoAula.service.EmpresaService;
 
 @RestController
 public class EmpresaController {
 
-	private final EmpresaService empresa_service;
+    private final PessoaEmpresaService pessoaEmpresaService;
 
 	@Autowired
-	public EmpresaController(EmpresaService aEmpresa_service) {
+	public EmpresaController(PessoaEmpresaService aPessoaEmpresa_service) {
 
-		empresa_service = aEmpresa_service;
+		pessoaEmpresaService = aPessoaEmpresa_service;
 	}
 
 	@GetMapping("/getEmpresas")
 	public List<Empresa> getEmpresas() {
-		return empresa_service.getEmpresas();
+		return pessoaEmpresaService.getEmpresas();
 	}
 
 	@PostMapping(path = "/addEmpresa")
@@ -48,9 +48,9 @@ public class EmpresaController {
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(sr);
 		}
 
-		if (empresa_service.addEmpresa(aEmpresa)) {
+		if (pessoaEmpresaService.addEmpresa(aEmpresa)) {
 			sr.setAsSuccess("Empresa Inserida Com Sucesso");
-			sr.setEmpresas(empresa_service.getEmpresas());
+			sr.setEmpresas(pessoaEmpresaService.getEmpresas());
 			return ResponseEntity.status(HttpStatus.OK).body(sr);
 
 		} else {
@@ -64,7 +64,7 @@ public class EmpresaController {
 	public SimpleResponse removePessoa2(@PathVariable String aId) {
 		SimpleResponse sr = new SimpleResponse();
 
-		if (empresa_service.removeEmpresa2(aId)) {
+		if (pessoaEmpresaService.removeEmpresa2(aId)) {
 			sr.setAsSuccess("Empresa Removida Com Sucesso");
 		} else {
 			sr.setAsError("Erro a Remover a Empresa");
@@ -78,7 +78,7 @@ public class EmpresaController {
 		SimpleResponseEmpresas sr = new SimpleResponseEmpresas();
 		sr.setAsSuccess("Sucesso");
 
-		if (empresa_service.removeEmpresa(aEmpresa)) {
+		if (pessoaEmpresaService.removeEmpresa(aEmpresa)) {
 			sr.setAsSuccess("Empresa Removida Com Sucesso");
 		} else {
 			sr.setAsError("Erro a Remover a Empresa");
@@ -105,7 +105,7 @@ public class EmpresaController {
 			return sr;
 		}
 
-		boolean suc = empresa_service.updateEmpresa(aEmpresa);
+		boolean suc = pessoaEmpresaService.updateEmpresa(aEmpresa);
 
 		if (suc) {
 			sr.setAsSuccess("Empresa atualizada com sucesso");
