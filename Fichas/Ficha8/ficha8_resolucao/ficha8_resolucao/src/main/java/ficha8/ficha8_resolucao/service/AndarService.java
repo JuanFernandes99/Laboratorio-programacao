@@ -38,8 +38,6 @@ public class AndarService {
 
 	}
 	
-	public void andarCounter() {
-		andarCounter++;
-	}
+
 
 }

@@ -35,13 +35,24 @@ public class LojaAndarService {
 
 			Andar andarAux = opcionalAndar.get();
 
-			andarAux.adicionarLoja(lojaAux);
-			lojaAux.setAndares(andarAux);
+			if (andarAux.getNumeroMaxLojas() >= (andarAux.getLojas().size() + 1)) {
 
-			andarRepo.save(andarAux); // save pq estamos a adicionar novos dados
-			lojaRepo.save(lojaAux);
+				int lojaContador = (andarAux.getLojas().size());
+				lojaContador++;
+				andarAux.setNumeroAndar(lojaContador);
 
-			return "Sucesso";
+				andarAux.adicionarLoja(lojaAux);
+				lojaAux.setAndares(andarAux);
+
+				andarRepo.save(andarAux); // save pq estamos a adicionar novos dados
+				lojaRepo.save(lojaAux);
+
+				return "Sucesso";
+
+			} else {
+				return "Número maximo de lojas atingido";
+			}
+
 		}
 		return "InSucesso";
 	}

@@ -36,7 +36,7 @@ public class AndarController {
 	public ResponseEntity<SimpleResponse> addAndar(@RequestBody Andar aAndar) {
 		SimpleResponseAndar sr = new SimpleResponseAndar();
 
-		if (aAndar.getNumeroAndar() == 0) {
+		if (aAndar.getNumeroAndar() != 0) {
 			sr.setMessage("Numero de Andar Invalido");
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(sr);
 		}

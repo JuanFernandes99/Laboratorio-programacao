@@ -49,22 +49,21 @@ public class AndarCentroComercialService {
 
 			Andar andarAux = opcionalAndar.get();
 
-			if (centroComercialAux.getNumeroMaxAndar() >= andarAux.getNumeroAndar()) {
+			if (centroComercialAux.getNumeroMaxAndar() >= (centroComercialAux.getAndares().size() + 1)) {
 
-				// verificar lista do centro comercial.size , verificar
-				
-				int andarContador = andarAux.getNumeroAndar();
+				int andarContador = (centroComercialAux.getAndares().size());
 				andarContador++;
 				andarAux.setNumeroAndar(andarContador);
 
 				centroComercialAux.adicionarAndar(andarAux);
 				andarAux.setCentroComercial(centroComercialAux);
 
-				andarAux.setNumeroAndar(0);
 				centroComercialRepo.save(centroComercialAux); // save pq estamos a adicionar novos dados
 				andarRepo.save(andarAux);
 
 				return "Sucesso";
+			} else {
+				return "Número maximo de andares atingido";
 			}
 
 		}
