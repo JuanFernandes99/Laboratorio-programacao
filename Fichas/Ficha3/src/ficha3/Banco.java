@@ -31,7 +31,7 @@ public class Banco {
 
 		for (ContaBancaria contaBancaria : contasBancarias) {
 			if (contaBancaria.getTitular().toLowerCase().equals(aNome)) { // para comparar strings é
-																						// utilizado sempre o equals
+																			// utilizado sempre o equals
 				// toLowerCase para melhorar a comparaçao
 				return contaBancaria;
 			}
@@ -50,12 +50,12 @@ public class Banco {
 	// Função que recebe a morada de uma casa e remove essa casa da lista de casas
 	// do Banco.
 	public void removeCasa(String aMorada) {
-        for(Casa casaAux : casas){
-            if(casaAux.getMorada().equals(aMorada)){
+		for (Casa casaAux : casas) {
+			if (casaAux.getMorada().equals(aMorada)) {
 
-                casas.remove(casaAux);
-            }
-        }
+				casas.remove(casaAux);
+			}
+		}
 	}
 
 	// Retorna a margem de lucro previsto da venda de todas as casas.
@@ -75,16 +75,19 @@ public class Banco {
 	public List<Casa> getCasas() {
 		return casas;
 	}
-	
+
 	public String getNome() {
 		return nome;
 	}
+
 	// Setters
 
 	public void setContasBancarias(List<ContaBancaria> aContasBancarias) {
 		contasBancarias = aContasBancarias;
 	}
 
-
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
 
 }

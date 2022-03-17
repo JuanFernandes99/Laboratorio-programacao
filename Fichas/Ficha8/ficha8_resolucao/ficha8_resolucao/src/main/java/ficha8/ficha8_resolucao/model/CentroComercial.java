@@ -11,8 +11,9 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+
 @Entity
-@Table(name = "Centro Comercial")
+@Table(name = "CentroComercial")
 public class CentroComercial {
 
 	@Id
@@ -27,6 +28,17 @@ public class CentroComercial {
 	@OneToMany(mappedBy = "centroComercial")
 	private List<Andar> andares = new ArrayList<Andar>();
 
+	public void adicionarAndar(Andar aAndar) {
+
+		andares.add(aAndar);
+
+	}
+
+	public void removerAndar(Andar aAndar) {
+
+		andares.remove(aAndar);
+
+	}
 //	Getters e Setters
 
 	public String getNome() {

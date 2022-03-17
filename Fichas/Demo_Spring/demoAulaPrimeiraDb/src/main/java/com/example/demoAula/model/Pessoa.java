@@ -1,8 +1,10 @@
 package com.example.demoAula.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore; // isto é para empresa
+
 
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "Pessoa")

@@ -1,8 +1,8 @@
 package projetoExtra1;
 
-
 import java.util.InputMismatchException;
 import java.util.Scanner;
+
 public class Main {
 	static Scanner sc = new Scanner(System.in);
 
