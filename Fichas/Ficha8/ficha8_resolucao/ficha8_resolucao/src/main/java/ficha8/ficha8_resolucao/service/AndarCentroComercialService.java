@@ -1,10 +1,8 @@
 package ficha8.ficha8_resolucao.service;
 
 import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import ficha8.ficha8_resolucao.model.Andar;
 import ficha8.ficha8_resolucao.model.CentroComercial;
 import ficha8.ficha8_resolucao.repository.AndarRepository;
@@ -35,7 +33,7 @@ public class AndarCentroComercialService {
 		aAndar.setCentroComercial(centroComercialAux);
 
 		centroComercialRepo.save(centroComercialAux);
-		andarRepo.save(aAndar); 
+		andarRepo.save(aAndar);
 
 		return true;
 	}
@@ -51,13 +49,24 @@ public class AndarCentroComercialService {
 
 			Andar andarAux = opcionalAndar.get();
 
-			centroComercialAux.adicionarAndar(andarAux);
-			andarAux.setCentroComercial(centroComercialAux);
+			if (centroComercialAux.getNumeroMaxAndar() >= andarAux.getNumeroAndar()) {
 
-			centroComercialRepo.save(centroComercialAux);  // save pq estamos a adicionar novos dados
-			andarRepo.save(andarAux); 
+				// verificar lista do centro comercial.size , verificar
+				
+				int andarContador = andarAux.getNumeroAndar();
+				andarContador++;
+				andarAux.setNumeroAndar(andarContador);
 
-			return "Sucesso";
+				centroComercialAux.adicionarAndar(andarAux);
+				andarAux.setCentroComercial(centroComercialAux);
+
+				andarAux.setNumeroAndar(0);
+				centroComercialRepo.save(centroComercialAux); // save pq estamos a adicionar novos dados
+				andarRepo.save(andarAux);
+
+				return "Sucesso";
+			}
+
 		}
 		return "InSucesso";
 	}

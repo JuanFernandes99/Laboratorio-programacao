@@ -14,16 +14,19 @@ import org.springframework.web.bind.annotation.RestController;
 import ficha8.ficha8_resolucao.dto.SimpleResponse;
 import ficha8.ficha8_resolucao.dto.SimpleResponseCentroComercial;
 import ficha8.ficha8_resolucao.model.CentroComercial;
+import ficha8.ficha8_resolucao.service.AndarLojaCCService;
 import ficha8.ficha8_resolucao.service.CentroComercialService;
 
 @RestController
 public class CentroComercialController {
 
 	private final CentroComercialService centroComercialService;
+	private final AndarLojaCCService andarLojaCCService;
 
 	@Autowired
-	public CentroComercialController(CentroComercialService aCentroComercialService) {
-
+	public CentroComercialController(CentroComercialService aCentroComercialService,
+			AndarLojaCCService aAndarLojaCCService) {
+		andarLojaCCService = aAndarLojaCCService;
 		centroComercialService = aCentroComercialService;
 	}
 
@@ -62,7 +65,7 @@ public class CentroComercialController {
 	public SimpleResponse removeCentroComercialById(@PathVariable String aId) {
 		SimpleResponse sr = new SimpleResponse();
 
-		if (centroComercialService.deleteCentroComercialById(aId)) {
+		if (andarLojaCCService.deleteCentroComercialById(aId)) {
 			sr.setAsSuccess("Centro Comercial Removido Com Sucesso");
 		} else {
 			sr.setAsError("Erro ao Remover o centro Comercial");

@@ -38,6 +38,17 @@ public class Andar {
 	@OneToMany(mappedBy = "andares")
 	private List<Loja> lojas = new ArrayList<Loja>();
 
+	public void adicionarLoja(Loja aLoja) {
+
+		lojas.add(aLoja);
+
+	}
+
+	public void removerLoja(Loja aLoja) {
+
+		lojas.remove(aLoja);
+
+	}
 //	Getters e Setters
 
 	public int getNumeroAndar() {

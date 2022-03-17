@@ -88,7 +88,7 @@ public class EmpresaController {
 	}
 
 	@PutMapping("/updateEmpresa")
-	public SimpleResponse updatePessoa(@RequestBody Empresa aEmpresa) {
+	public SimpleResponse updateEmpresa(@RequestBody Empresa aEmpresa) {
 		SimpleResponse sr = new SimpleResponse();
 
 		if (aEmpresa.getId() == null) {

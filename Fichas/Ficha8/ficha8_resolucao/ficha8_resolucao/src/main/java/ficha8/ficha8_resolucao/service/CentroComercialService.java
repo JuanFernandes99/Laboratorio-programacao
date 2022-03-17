@@ -33,25 +33,6 @@ public class CentroComercialService {
 		return false;
 	}
 
-	public boolean deleteCentroComercialById(String aId) {
-
-		try { // pq da excepçao se meto uma letrea
-			Long id_long = parseLong(aId);
-			Optional<CentroComercial> centroComercialOpcional = centroComercialRepo.findById(id_long);
-
-			if (aId == null || id_long == NaN || centroComercialOpcional.isEmpty()) {
-				return false;
-			}
-
-			CentroComercial centroComercial = centroComercialOpcional.get();
-			centroComercialRepo.delete(centroComercial);
-
-			return true;
-		} catch (Exception e) {
-			return false;
-		}
-
-	}
 
 	public List<CentroComercial> getAllCentroComercial() {
 		List<CentroComercial> listaCentros = new ArrayList<>();
