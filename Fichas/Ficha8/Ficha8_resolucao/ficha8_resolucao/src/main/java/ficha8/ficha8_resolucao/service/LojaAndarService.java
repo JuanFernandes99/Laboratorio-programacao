@@ -35,7 +35,7 @@ public class LojaAndarService {
 
 			Andar andarAux = opcionalAndar.get();
 
-			if (andarAux.getNumeroMaxLojas() >= (andarAux.getLojas().size() + 1)) {
+			if (andarAux.getLojas().size() < andarAux.getNumeroMaxLojas()) {
 
 				int lojaContador = (andarAux.getLojas().size());
 				lojaContador++;

@@ -49,7 +49,7 @@ public class AndarCentroComercialService {
 
 			Andar andarAux = opcionalAndar.get();
 
-			if (centroComercialAux.getNumeroMaxAndar() >= (centroComercialAux.getAndares().size() + 1)) {
+			if ( centroComercialAux.getAndares().size() < centroComercialAux.getNumeroMaxAndar()  ) {
 
 				int andarContador = (centroComercialAux.getAndares().size());
 				andarContador++;
