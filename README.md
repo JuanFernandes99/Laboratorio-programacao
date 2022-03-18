@@ -9,6 +9,8 @@
 - [x] [Ficha 4](https://github.com/JuanFernandes99/Laboratorio-programacao/tree/main/Fichas/Ficha4)
 - [x] [Ficha 5](https://github.com/JuanFernandes99/Laboratorio-programacao/tree/main/Fichas/Ficha5)
 - [x] [Ficha 6](https://github.com/JuanFernandes99/Laboratorio-programacao/tree/main/Fichas/Ficha6)
+- [x] [Ficha 7](https://github.com/JuanFernandes99/Laboratorio-programacao/tree/main/Fichas/Ficha7)
+- [x] [Ficha 8](https://github.com/JuanFernandes99/Laboratorio-programacao/tree/main/Fichas/Ficha8)
 
 ## Extras:
 
