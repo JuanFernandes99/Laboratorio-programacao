@@ -2,6 +2,7 @@ package ficha8.ficha8_resolucao.controller;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -24,7 +25,7 @@ public class AndarController {
 	private final AndarService andarService;
 	private final LojaAndarService lojaAndarService;
 	private final AndarCentroComercialService andarCentroComercialService;
-
+	@Autowired
 	public AndarController(AndarService aAndarService, LojaAndarService aLojaAndarService,
 			AndarCentroComercialService aAndarCentroComercialService) {
 		andarService = aAndarService;
