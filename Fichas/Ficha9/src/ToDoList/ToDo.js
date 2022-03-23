@@ -13,12 +13,12 @@ export function ToDo() {
   function addTodo() {
     if (newToDo.trim().length !== 0) {
       //Fazer uma copia dos 'to dos' que temos atualmente para evitar estragos colaterais
-      let todoListAux = toDoList;
+      let todoListAux = toDoList; // sempre criar uma variavel auxiliar no trabalhar diretamente com os estados
 
       let newTodoAux = newToDo;
 
       //Adicionamos um elemento à lista temporaria
-      todoListAux = [newTodoAux, ...todoListAux];
+      todoListAux = [newTodoAux, ...todoListAux]; // juntar elementos tipo concat
 
       //definimos o estado como a nossa nova lista
       setTodos(todoListAux);
