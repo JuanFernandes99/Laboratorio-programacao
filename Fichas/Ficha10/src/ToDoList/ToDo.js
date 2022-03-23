@@ -32,7 +32,7 @@ export function ToDo() {
       .then((parsedResponse) => {
         //Como ele só chega aqui se tiver sucesso basta atualizar a variavel Pessoas
         setPessoasList(parsedResponse);
-        //console.log(parsedResponse);
+        console.log(parsedResponse);
       })
       .catch((error) => {
         alert(error);
@@ -65,7 +65,9 @@ export function ToDo() {
             return;
           }
 
-          console.log(parsedResponse.message);
+          console.log(parsedResponse.pessoas);//set para atualizar a lista com a resposta !
+         // (pessoas devolve a pessoa)
+//set (message) devolve a mensagem
           // Precisamos de refrescar a lista, se tivessemos o id bastava adicionar um novo com o id
           //fetchPessoas();
         })
