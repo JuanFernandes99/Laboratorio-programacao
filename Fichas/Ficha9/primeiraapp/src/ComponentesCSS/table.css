@@ -1,0 +1,21 @@
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid brown;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(odd) {
+  /* odd começa na primeira linha ---- even segunda*/
+  background-color: gray;
+}
+
+.primeiraLinhaTab th {
+  background-color:blue;
+}
