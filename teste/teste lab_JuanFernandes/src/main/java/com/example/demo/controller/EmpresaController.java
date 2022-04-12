@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -57,11 +58,11 @@ public class EmpresaController {
 	}
 
 	@CrossOrigin
-	@DeleteMapping("/deleteEmpresa")
-	public ResponseEntity<SimpleResponse> deleteEmpresa(@RequestBody Empresa empresa) {
+	@DeleteMapping("/deleteEmpresa/{aEmpresa_id}")
+	public ResponseEntity<SimpleResponse> deleteEmpresa(@PathVariable String aEmpresa_id) {
 		SimpleResponse sr = new SimpleResponse();
 
-		if (pessoaEmpresaSalarioService.deleteEmpresa(empresa)) {
+		if (pessoaEmpresaSalarioService.deleteEmpresa(aEmpresa_id)) {
 			sr.setSucess("Sucesso ao remover a empresa");
 			return ResponseEntity.status(HttpStatus.OK).body(sr);
 		}

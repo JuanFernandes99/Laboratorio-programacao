@@ -151,8 +151,9 @@ public class PessoaEmpresaSalarioService {
 		return true;
 	}
 
-	public boolean deleteEmpresa(Empresa emp) {
-		Optional<Empresa> empOptional = empresaRepository.findById(emp.getId());
+	public boolean deleteEmpresa(String aEmpresa_id) {
+		Long id_long = parseLong(aEmpresa_id);
+		Optional<Empresa> empOptional = empresaRepository.findById(id_long);
 
 		if (empOptional.isEmpty()) {
 			return false;
@@ -160,8 +161,12 @@ public class PessoaEmpresaSalarioService {
 
 		Empresa empresaToDelete = empOptional.get();
 
-		for (Pessoa aux : empresaToDelete.getListaPessoas()) {
-			pessoaRepository.delete(aux);
+		for (Pessoa pessoaAux : empresaToDelete.getListaPessoas()) {
+			for (Salario salarioAux : pessoaAux.getListaSalarios()) {
+				salarioRepository.delete(salarioAux);
+
+			}
+			pessoaRepository.delete(pessoaAux);
 		}
 
 		empresaRepository.delete(empresaToDelete);

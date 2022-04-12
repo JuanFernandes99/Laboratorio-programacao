@@ -11,14 +11,7 @@ import React, { useState, useEffect } from "react";
 function App() {
   const [infoEmpresa, setInfoEmpresa] = useState();
   const [funcionarioInfo, setFuncionarioInfo] = useState();
-  // Função para obter a info da Empresa
-  function GetEmpresaInfo(item) {
-    return setInfoEmpresa(item);
-  }
-  // Função para obter a info do funcionario
-  function GetFuncionarioInfo(item) {
-    return setFuncionarioInfo(item);
-  }
+
   return (
     <div className="App">
       <BrowserRouter>
@@ -32,7 +25,7 @@ function App() {
 
           <Route
             path="/getAllEmpresas"
-            element={<Getempresa GetEmpresaInfo={GetEmpresaInfo}></Getempresa>}
+            element={<Getempresa setInfoEmpresa={setInfoEmpresa}></Getempresa>}
           />
           <Route path="/*" element={<Getempresa></Getempresa>} />
 
@@ -41,7 +34,7 @@ function App() {
             element={
               <EmpresaSelecionada
                 infoEmpresa={infoEmpresa}
-                GetFuncionarioInfo={GetFuncionarioInfo}
+                setFuncionarioInfo={setFuncionarioInfo}
               ></EmpresaSelecionada>
             }
           />

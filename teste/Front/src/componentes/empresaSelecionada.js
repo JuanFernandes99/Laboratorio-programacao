@@ -83,7 +83,7 @@ export function EmpresaSelecionada(props) {
                   {funcionarios.map((element) => (
                     <Card
                       onClick={() => {
-                        props.GetFuncionarioInfo(element);
+                        props.setFuncionarioInfo(element);
                         navigate("/funcionarioID/" + element.id);
                       }}
                       key={element.id}

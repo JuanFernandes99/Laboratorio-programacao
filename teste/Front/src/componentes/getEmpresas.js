@@ -15,7 +15,7 @@ export function Getempresa(props) {
   const API_URL = "http://localhost:8080";
   const navigate = useNavigate();
   const [listaEmpresa, setListasEmpresa] = useState([]);
-
+  const [empresaRemove, setEmpresaRemove] = useState([]);
   useEffect(() => {
     GetEmpresas();
   }, []);
@@ -47,6 +47,31 @@ export function Getempresa(props) {
       });
   }
 
+  function DeleteEmpresa(element) {
+    fetch(API_URL + "/deleteEmpresa/" + element, {
+      method: "Delete",
+      headers: {
+        "Content-type": "application/json",
+      },
+    })
+      .then((response) => {
+        console.log(response);
+
+        if (response.status !== 200) {
+          throw new Error("Ocorreu um erro, nenhum Autor disponível");
+        }
+
+        return response.json();
+      })
+      .then((parsedResponse) => {
+        console.log(parsedResponse);
+        GetEmpresas();
+      })
+      .catch((error) => {
+        alert(error);
+      });
+  }
+
   return listaEmpresa.length !== 0 ? (
     <>
       <Grid item xs={12}>
@@ -56,29 +81,45 @@ export function Getempresa(props) {
               <FormControl component="fieldset">
                 <RadioGroup titulo="spacing" aria-label="spacing" row>
                   {listaEmpresa.map((element) => (
-                    <Card
-                      onClick={() => {
-                        props.GetEmpresaInfo(element);
-                        navigate("/empresaID/" + element.id);
-                      }}
-                      key={element.id}
-                      sx={{ margin: 1.5, maxWidth: 180, maxHeight: 340 }}
-                    >
-                      <CardActionArea>
-                        <CardMedia
-                          component="img"
-                          height="180"
-                          image={element.imagem}
-                          alt="livro"
-                        />
+                    <>
+                      <Card
+                        onClick={() => {
+                          props.setInfoEmpresa(element);
+                          navigate("/empresaID/" + element.id);
+                        }}
+                        key={element.id}
+                        sx={{ margin: 1.5, maxWidth: 180, maxHeight: 340 }}
+                      >
+                        <CardActionArea>
+                          <CardMedia
+                            component="img"
+                            height="180"
+                            image={element.imagem}
+                            alt="livro"
+                          />
 
-                        <CardContent>
-                          <Typography gutterBottom variant="h6" component="div">
-                            {element.nome}
-                          </Typography>
-                        </CardContent>
-                      </CardActionArea>
-                    </Card>
+                          <CardContent>
+                            <Typography
+                              gutterBottom
+                              variant="h6"
+                              component="div"
+                            >
+                              {element.nome}
+                            </Typography>
+                          </CardContent>
+                        </CardActionArea>
+                        <button
+                          onClick={() => {
+                            setEmpresaRemove(element);
+                            console.log(empresaRemove);
+                            DeleteEmpresa(element.id);
+                            console.log(element.id);
+                          }}
+                        >
+                          Remove
+                        </button>
+                      </Card>
+                    </>
                   ))}
                 </RadioGroup>
               </FormControl>
