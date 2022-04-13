@@ -8,14 +8,13 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { CardActionArea } from "@mui/material";
+import { Button, CardActionArea } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 export function Getempresa(props) {
   const API_URL = "http://localhost:8080";
   const navigate = useNavigate();
   const [listaEmpresa, setListasEmpresa] = useState([]);
-  const [empresaRemove, setEmpresaRemove] = useState([]);
   useEffect(() => {
     GetEmpresas();
   }, []);
@@ -65,6 +64,7 @@ export function Getempresa(props) {
       })
       .then((parsedResponse) => {
         console.log(parsedResponse);
+        alert(parsedResponse);
         GetEmpresas();
       })
       .catch((error) => {
@@ -108,17 +108,15 @@ export function Getempresa(props) {
                             </Typography>
                           </CardContent>
                         </CardActionArea>
-                        <button
-                          onClick={() => {
-                            setEmpresaRemove(element);
-                            console.log(empresaRemove);
-                            DeleteEmpresa(element.id);
-                            console.log(element.id);
-                          }}
-                        >
-                          Remove
-                        </button>
                       </Card>
+                      <Button
+                        onClick={() => {
+                          DeleteEmpresa(element.id);
+                          console.log(element.id);
+                        }}
+                      >
+                        Remove
+                      </Button>
                     </>
                   ))}
                 </RadioGroup>
