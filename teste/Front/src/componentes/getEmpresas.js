@@ -16,6 +16,7 @@ export function Getempresa(props) {
   const navigate = useNavigate();
   const [listaEmpresa, setListasEmpresa] = useState([]);
   useEffect(() => {
+    console.log("ola");
     GetEmpresas();
   }, []);
 
@@ -64,7 +65,7 @@ export function Getempresa(props) {
       })
       .then((parsedResponse) => {
         console.log(parsedResponse);
-        alert(parsedResponse);
+        alert(parsedResponse.message);
         GetEmpresas();
       })
       .catch((error) => {
@@ -83,14 +84,15 @@ export function Getempresa(props) {
                   {listaEmpresa.map((element) => (
                     <>
                       <Card
-                        onClick={() => {
-                          props.setInfoEmpresa(element);
-                          navigate("/empresaID/" + element.id);
-                        }}
                         key={element.id}
                         sx={{ margin: 1.5, maxWidth: 180, maxHeight: 340 }}
                       >
-                        <CardActionArea>
+                        <CardActionArea
+                          onClick={() => {
+                            props.setInfoEmpresa(element);
+                            navigate("/empresaID/" + element.id);
+                          }}
+                        >
                           <CardMedia
                             component="img"
                             height="180"
@@ -108,15 +110,15 @@ export function Getempresa(props) {
                             </Typography>
                           </CardContent>
                         </CardActionArea>
+                        <Button
+                          onClick={() => {
+                            DeleteEmpresa(element.id);
+                            console.log(element.id);
+                          }}
+                        >
+                          Remove
+                        </Button>
                       </Card>
-                      <Button
-                        onClick={() => {
-                          DeleteEmpresa(element.id);
-                          console.log(element.id);
-                        }}
-                      >
-                        Remove
-                      </Button>
                     </>
                   ))}
                 </RadioGroup>
